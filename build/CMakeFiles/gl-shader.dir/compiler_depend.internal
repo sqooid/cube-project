@@ -3,8 +3,7 @@
 
 CMakeFiles/gl-shader.dir/src/tools/GLShader.cpp.obj
  C:/Users/Lucas/Documents/sfml-projects/cube-project/src/tools/GLShader.cpp
- C:/Users/Lucas/Documents/sfml-projects/3d-test/src/tools/GLShader.cpp
- C:/Users/Lucas/Documents/sfml-projects/3d-test/src/tools/GLShader.hpp
+ C:/Users/Lucas/Documents/sfml-projects/cube-project/src/tools/GLShader.hpp
  C:/glew-2.1.0/include/GL/glew.h
  C:/MinGW/include/inttypes.h
  C:/MinGW/include/_mingw.h
