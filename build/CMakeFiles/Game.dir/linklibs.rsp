@@ -1,0 +1,1 @@
+ C:/SFML-2.5.1/lib/libsfml-graphics-d.a C:/SFML-2.5.1/lib/libsfml-audio-d.a -lopengl32 C:/glew-2.1.0/lib/Release/Win32/glew32.lib libgl-shader.a C:/SFML-2.5.1/lib/libsfml-window-d.a C:/SFML-2.5.1/lib/libsfml-system-d.a -lopengl32 C:/glew-2.1.0/lib/Release/Win32/glew32.lib -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32 

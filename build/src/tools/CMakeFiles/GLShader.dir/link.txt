@@ -1,0 +1,2 @@
+C:\MinGW\bin\ar.exe qc libGLShader.a CMakeFiles/GLShader.dir/GLShader.cpp.obj
+C:\MinGW\bin\ranlib.exe libGLShader.a

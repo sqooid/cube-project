@@ -1,0 +1,4 @@
+C:/Users/Lucas/Documents/sfml-projects/cube-project/build/CMakeFiles/gl-shader.dir
+C:/Users/Lucas/Documents/sfml-projects/cube-project/build/CMakeFiles/Game.dir
+C:/Users/Lucas/Documents/sfml-projects/cube-project/build/CMakeFiles/edit_cache.dir
+C:/Users/Lucas/Documents/sfml-projects/cube-project/build/CMakeFiles/rebuild_cache.dir

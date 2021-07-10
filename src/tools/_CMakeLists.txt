@@ -1,0 +1,16 @@
+# OpenGL linking
+find_package(OpenGL REQUIRED)
+
+# GLEW linking
+set(GLEW_INCLUDE_DIRS "C:/glew-2.1.0/include")
+set(GLEW_LIBRARIES "C:/glew-2.1.0/lib/Release/Win32")
+# set(GLEW_ROOT "C:/glew-2.1.0")
+# set(GLEW_VERBOSE TRUE)
+find_package(GLEW REQUIRED)
+
+add_library(
+	GLShader
+	GLShader.hpp
+	GLShader.cpp
+)
+

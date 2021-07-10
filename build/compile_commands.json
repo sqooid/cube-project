@@ -1,0 +1,22 @@
+[
+{
+  "directory": "C:/Users/Lucas/Documents/sfml-projects/cube-project/build",
+  "command": "C:\\MinGW\\bin\\mingw32-g++.exe  @CMakeFiles/gl-shader.dir/includes_CXX.rsp -g -o CMakeFiles\\gl-shader.dir\\src\\tools\\GLShader.cpp.obj -c C:\\Users\\Lucas\\Documents\\sfml-projects\\cube-project\\src\\tools\\GLShader.cpp",
+  "file": "C:/Users/Lucas/Documents/sfml-projects/cube-project/src/tools/GLShader.cpp"
+},
+{
+  "directory": "C:/Users/Lucas/Documents/sfml-projects/cube-project/build",
+  "command": "C:\\MinGW\\bin\\mingw32-g++.exe  @CMakeFiles/Game.dir/includes_CXX.rsp -g -o CMakeFiles\\Game.dir\\src\\main.cpp.obj -c C:\\Users\\Lucas\\Documents\\sfml-projects\\cube-project\\src\\main.cpp",
+  "file": "C:/Users/Lucas/Documents/sfml-projects/cube-project/src/main.cpp"
+},
+{
+  "directory": "C:/Users/Lucas/Documents/sfml-projects/cube-project/build",
+  "command": "C:\\MinGW\\bin\\mingw32-g++.exe  @CMakeFiles/Game.dir/includes_CXX.rsp -g -o CMakeFiles\\Game.dir\\src\\entities.cpp.obj -c C:\\Users\\Lucas\\Documents\\sfml-projects\\cube-project\\src\\entities.cpp",
+  "file": "C:/Users/Lucas/Documents/sfml-projects/cube-project/src/entities.cpp"
+},
+{
+  "directory": "C:/Users/Lucas/Documents/sfml-projects/cube-project/build",
+  "command": "C:\\MinGW\\bin\\mingw32-g++.exe  @CMakeFiles/Game.dir/includes_CXX.rsp -g -o CMakeFiles\\Game.dir\\src\\tools\\utility.cpp.obj -c C:\\Users\\Lucas\\Documents\\sfml-projects\\cube-project\\src\\tools\\utility.cpp",
+  "file": "C:/Users/Lucas/Documents/sfml-projects/cube-project/src/tools/utility.cpp"
+}
+]
