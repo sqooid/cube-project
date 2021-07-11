@@ -8,6 +8,21 @@
 #include <glm/gtx/quaternion.hpp>
 #include <glm/mat4x4.hpp>
 
+namespace Entity
+{
+    class Entity
+    {
+    public:
+        glm::vec3 position;
+        glm::quat rotation;
+        float size;
+
+        void rotate(float angle, glm::vec3 axis);
+        void move(glm::vec3 vec);
+        void scale(float diff);
+    };
+}
+
 namespace Cube
 {
     static std::vector<GLfloat> vertices{
@@ -47,27 +62,32 @@ namespace Cube
         4, 5, 5, 7, 7, 6, 6, 4};
 
     static std::vector<GLfloat> colors{
-        1.0, 1.0, 1.0,
-        1.0, 0.0, 0.0,
-        0.0, 1.0, 0.0,
-        0.0, 0.0, 1.0,
-        1.0, 1.0, 0.0,
-        1.0, 0.0, 1.0,
-        0.0, 1.0, 1.0,
-        0.1, 0.1, 0.1};
+        0.8, 0.8, 0.8, // Left
+        0.8, 0.8, 0.8, // Right
+        0.8, 0.8, 0.8, // Top
+        0.8, 0.8, 0.8, // Front
+        0.8, 0.8, 0.8, // Back
+        0.8, 0.8, 0.8, // Bottom
+        0.8, 0.8, 0.8, // Placeholder
+        0.8, 0.8, 0.8  // Placeholder
+    };
 
-    class Cube
+    static std::vector<GLfloat> vertexNormals{
+        // For use with flat qualifier in shader
+        -1.0, 0.0, 0.0, // Left
+        1.0, 0.0, 0.0,  // Right
+        0.0, 1.0, 0.0,  // Top
+        0.0, 0.0, 1.0,  // Front
+        0.0, 0.0, -1.0, // Back
+        0.0, -1.0, 0.0, // Bottom
+        1.0, 0.0, 0.0,  // Placeholder
+        1.0, 0.0, 0.0   // Placeholder
+    };
+
+    class Cube : public Entity::Entity
     {
     public:
         Cube(float radius, glm::vec3 position, glm::vec3 orientation);
-
-        glm::vec3 position;
-        glm::quat rotation;
-        float size;
-
-        void rotate(float angle, glm::vec3 axis);
-        void move(glm::vec3 vec);
-        void scale(float diff);
 
         glm::mat4 genModelMatrix();
     };

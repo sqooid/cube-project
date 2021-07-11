@@ -49,8 +49,8 @@ GLenum glCheckError_(const char *file, int line)
 void initialize()
 {
 	// Setting window settings
-	// glEnable(GL_DEPTH_TEST);
-	// glEnable(GL_CULL_FACE);
+	glEnable(GL_DEPTH_TEST);
+	glEnable(GL_CULL_FACE);
 	// glEnable(GL_BLEND);
 
 	// OpenGL version printing
@@ -82,6 +82,14 @@ void loadData(Cube::Cube &cube, std::vector<GLuint> &vao)
 	glBufferData(GL_ARRAY_BUFFER, sizeof(GLfloat) * Cube::vertices.size(), &(Cube::vertices[0]), GL_STATIC_DRAW);
 	glEnableVertexAttribArray(0);
 	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 0, 0);
+	glCheckError();
+
+	GLuint normalBuffer;
+	glGenBuffers(1, &normalBuffer);
+	glBindBuffer(GL_ARRAY_BUFFER, normalBuffer);
+	glBufferData(GL_ARRAY_BUFFER, sizeof(float) * Cube::vertexNormals.size(), &Cube::vertexNormals[0], GL_STATIC_DRAW);
+	glEnableVertexAttribArray(2);
+	glVertexAttribPointer(2, 3, GL_FLOAT, GL_FALSE, 0, 0);
 	glCheckError();
 
 	GLuint colorBuffer;
@@ -121,7 +129,7 @@ void compileShaders(std::vector<GLuint> &shaders)
 {
 	glProvokingVertex(GL_FIRST_VERTEX_CONVENTION);
 	// Creating shader programs
-	// Face shader
+	// Face shader [0]
 	GLuint faceProgram = LoadShader("shaders/face.vert", "shaders/face.frag");
 	glLinkProgram(faceProgram);
 	GLint status;
@@ -132,7 +140,7 @@ void compileShaders(std::vector<GLuint> &shaders)
 	}
 	shaders[0] = faceProgram;
 
-	// Edge shader
+	// Edge shader [1]
 	GLuint edgeProgram = LoadShader("shaders/edge.vert", "shaders/edge.frag");
 	glLinkProgram(edgeProgram);
 	glGetProgramiv(faceProgram, GL_LINK_STATUS, &status);
@@ -160,6 +168,10 @@ void render(std::vector<GLuint> &vao, std::vector<GLuint> &shaders, Cube::Cube c
 
 	glBindVertexArray(0);
 	glUseProgram(0);
+}
+
+void initializeUniforms(std::vector<GLuint> shaders)
+{
 }
 
 typedef struct Control
@@ -266,7 +278,7 @@ int main()
 	compileShaders(shaders);
 
 	// Loading cube data
-	Cube::Cube cube(0.5f, glm::vec3(0.0, 0.0, 0.0), glm::vec3(0.0, 0.0, 1.0));
+	Cube::Cube cube(0.5f, glm::vec3(0.0, 0.0, -2.0), glm::vec3(0.0, 0.0, 1.0));
 	// Creating vao's
 	std::vector<GLuint> vao(2);
 	glGenVertexArrays(2, &vao[0]);
@@ -285,8 +297,9 @@ int main()
 		glm::vec3(0.0f, 0.0f, -1.0f),
 		glm::vec3(0.0f, 1.0f, 0.0f));
 
-	std::vector<GLint> MVPLocations(2);
+	std::vector<GLint> MVPLocations(3);
 	MVPLocations[0] = glGetUniformLocation(shaders[0], "MVP");
+	MVPLocations[2] = glGetUniformLocation(shaders[0], "Model");
 	MVPLocations[1] = glGetUniformLocation(shaders[1], "MVP");
 
 	// Clock
@@ -321,6 +334,7 @@ int main()
 		glm::mat4 MVP = projectionMatrix * cameraMatrix * modelMatrix;
 		glUseProgram(shaders[0]);
 		glUniformMatrix4fv(MVPLocations[0], 1, GL_FALSE, &MVP[0][0]);
+		glUniformMatrix4fv(MVPLocations[2], 1, GL_FALSE, &modelMatrix[0][0]);
 		glUseProgram(shaders[1]);
 		glUniformMatrix4fv(MVPLocations[1], 1, GL_FALSE, &MVP[0][0]);
 		// Render

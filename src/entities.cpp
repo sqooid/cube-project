@@ -5,31 +5,33 @@
 #include <iostream>
 #include "tools/utility.hpp"
 
+// Base class Entity definitions
+
+void Entity::Entity::rotate(float angle, glm::vec3 axis)
+{
+	glm::quat newQuat = glm::angleAxis(angle, axis);
+	rotation = glm::normalize(newQuat * rotation);
+}
+
+void Entity::Entity::move(glm::vec3 vec)
+{
+	position += vec;
+}
+
+void Entity::Entity::scale(float diff)
+{
+	if (size + diff > 0)
+	{
+		size += diff;
+	}
+}
+
 Cube::Cube::Cube(float radius, glm::vec3 position, glm::vec3 eulerOrientation)
 {
 	this->position = position;
 	glm::quat rotation(eulerOrientation);
 	this->rotation = rotation;
 	this->size = radius;
-}
-
-void Cube::Cube::rotate(float angle, glm::vec3 axis)
-{
-	glm::quat newQuat = glm::angleAxis(angle, axis);
-	rotation = glm::normalize(newQuat * rotation);
-}
-
-void Cube::Cube::move(glm::vec3 vec)
-{
-	position += vec;
-}
-
-void Cube::Cube::scale(float diff)
-{
-	if (size + diff > 0)
-	{
-		size += diff;
-	}
 }
 
 glm::mat4 Cube::Cube::genModelMatrix()
