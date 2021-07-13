@@ -7,6 +7,16 @@
 #include <glm/vec3.hpp>
 #include <glm/gtx/quaternion.hpp>
 #include <glm/mat4x4.hpp>
+#include <SFML/Graphics.hpp>
+
+/**
+ * @brief Enumeration for types of entites
+ * 
+ */
+enum class EntityType
+{
+    CUBE_E
+};
 
 namespace Entity
 {
@@ -20,6 +30,20 @@ namespace Entity
         void rotate(float angle, glm::vec3 axis);
         void move(glm::vec3 vec);
         void scale(float diff);
+    };
+}
+
+namespace Player
+{
+    class Player : public Entity::Entity
+    {
+    public:
+        Player(float height = 0.0f, glm::vec3 footPosition = glm::vec3(0.0), glm::vec3 orientation = glm::vec3(0.0, 0.0, -1.0));
+        void rotate(float angle, glm::vec3 axis);
+
+        float height;
+        float fov;
+        glm::vec3 faceDirection;
     };
 }
 
@@ -87,10 +111,57 @@ namespace Cube
     class Cube : public Entity::Entity
     {
     public:
-        Cube(float radius, glm::vec3 position, glm::vec3 orientation);
+        /**
+         * @brief Construct a new Player object
+         * 
+         * @param height Height of the player camera from foot
+         * @param footPosition 
+         * @param facing 
+         */
+        Cube(float radius = 1.0f, glm::vec3 position = glm::vec3(0.0), glm::vec3 orientation = glm::vec3(0.0, 0.0, 1.0));
 
         glm::mat4 genModelMatrix();
     };
 }
+
+typedef struct Control
+{
+    sf::Vector2i lastLeftClick;
+    sf::Vector2i lastRightClick;
+    bool windowFocused;
+} Control;
+
+typedef struct Glid
+{
+    Glid()
+    {
+        std::vector<GLuint> vaoVec;
+        this->vao = vaoVec;
+        std::vector<GLuint> shaderVec;
+        this->shader = shaderVec;
+        std::vector<GLint> uniformVec;
+        this->uniform = uniformVec;
+    }
+
+    std::vector<GLuint> vao;
+    std::vector<GLuint> shader;
+    std::vector<GLint> uniform;
+} Glid;
+
+/**
+ * @brief Class containing all data about entities in the world
+ * 
+ */
+class State
+{
+public:
+    State(Player::Player &player, Control &control);
+
+    Player::Player player;
+    Control control;
+    std::vector<Cube::Cube *> cubeList;
+
+    void addEntity(Cube::Cube &entity);
+};
 
 #endif

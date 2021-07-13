@@ -15,7 +15,7 @@ void main()
 	// vec3 lightSourceVector = normalize(lightSourceDirection);
 	vec3 lightSourceVector = normalize(vec3(0.0, -1.0, -1.0));
 
-	float ambientStrength = 0.2;
+	float ambientStrength = 0.3;
 	vec3 ambient = ambientStrength * vec3(1.0, 1.0, 1.0);
 
 	float diff = max(dot(normalVector, -lightSourceVector), 0.0);

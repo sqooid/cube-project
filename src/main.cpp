@@ -71,10 +71,16 @@ void initialize()
 	glewInit();
 }
 
-void loadData(Cube::Cube &cube, std::vector<GLuint> &vao)
+void loadData(Glid &glid)
 {
+	const int vaoCount = 2;
+	for (int i = 0; i < vaoCount; i++)
+	{
+		glid.vao.push_back(0);
+	}
+	glGenVertexArrays(vaoCount, &glid.vao[0]);
 	// Loading cube data
-	glBindVertexArray(vao[0]);
+	glBindVertexArray(glid.vao[0]);
 
 	GLuint vertexBuffer;
 	glGenBuffers(1, &vertexBuffer);
@@ -108,7 +114,7 @@ void loadData(Cube::Cube &cube, std::vector<GLuint> &vao)
 
 	// Edges
 	// Rebinding vertices
-	glBindVertexArray(vao[1]);
+	glBindVertexArray(glid.vao[1]);
 	glBindBuffer(GL_ARRAY_BUFFER, vertexBuffer);
 	glEnableVertexAttribArray(0);
 	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 0, 0);
@@ -125,7 +131,7 @@ void loadData(Cube::Cube &cube, std::vector<GLuint> &vao)
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
 }
 
-void compileShaders(std::vector<GLuint> &shaders)
+void compileShaders(Glid &glid)
 {
 	glProvokingVertex(GL_FIRST_VERTEX_CONVENTION);
 	// Creating shader programs
@@ -138,7 +144,7 @@ void compileShaders(std::vector<GLuint> &shaders)
 	{
 		std::cout << "Fucking problemo with face program (1)\n";
 	}
-	shaders[0] = faceProgram;
+	glid.shader.push_back(faceProgram);
 
 	// Edge shader [1]
 	GLuint edgeProgram = LoadShader("shaders/edge.vert", "shaders/edge.frag");
@@ -148,22 +154,58 @@ void compileShaders(std::vector<GLuint> &shaders)
 	{
 		std::cout << "Fucking problemo with edge program (1)\n";
 	}
-	shaders[1] = edgeProgram;
+	glid.shader.push_back(edgeProgram);
 }
 
-void render(std::vector<GLuint> &vao, std::vector<GLuint> &shaders, Cube::Cube cube)
+/**
+ * @brief Function that handles all rendering given openGL id's and game state
+ * 
+ * @param glid 
+ * @param state 
+ */
+void render(sf::Window &window, Glid glid, State state)
 {
 	glClearColor(0.1f, 0.1f, 0.1f, 0.0f);
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
+	// Setting uniforms
+	glm::mat4 modelMatrix = state.cubeList[0]->genModelMatrix();
+	glm::mat4 projectionMatrix = glm::perspective(
+		glm::radians(state.player.fov),
+		(float)window.getSize().x / window.getSize().y,
+		0.1f,
+		100.0f);
+
+	// Setting view matrix
+	glm::vec3 eye = state.player.position + glm::vec3(0.0, 0.0, state.player.height);
+	glm::mat4 cameraMatrix = glm::lookAt(
+		eye,
+		eye + state.player.faceDirection,
+		glm::vec3(0.0f, 1.0f, 0.0f));
+
+	glm::mat4 MVP = projectionMatrix * cameraMatrix * modelMatrix;
+
+	// std::cout << "Printing matrices"
+	// 		  << "\n";
+	// printMatrix(modelMatrix);
+	// printMatrix(projectionMatrix);
+	// printMatrix(cameraMatrix);
+	// printMatrix(MVP);
+
+	glUseProgram(glid.shader[0]);
+	glUniformMatrix4fv(glid.uniform[0], 1, GL_FALSE, &MVP[0][0]);
+	glUniformMatrix4fv(glid.uniform[1], 1, GL_FALSE, &modelMatrix[0][0]);
+	glUseProgram(glid.shader[1]);
+	glUniformMatrix4fv(glid.uniform[2], 1, GL_FALSE, &MVP[0][0]);
+
 	// Rendering faces
-	glBindVertexArray(vao[0]);
-	glUseProgram(shaders[0]);
+	glBindVertexArray(glid.vao[0]);
+	glUseProgram(glid.shader[0]);
 	glDrawElements(GL_TRIANGLES, 36, GL_UNSIGNED_INT, 0);
 
 	// Rendering edges
-	glBindVertexArray(vao[1]);
-	glUseProgram(shaders[1]);
+	glBindVertexArray(glid.vao[1]);
+	glUseProgram(glid.shader[1]);
 	glDrawElements(GL_LINES, 24, GL_UNSIGNED_INT, 0);
 
 	glBindVertexArray(0);
@@ -174,13 +216,7 @@ void initializeUniforms(std::vector<GLuint> shaders)
 {
 }
 
-typedef struct Control
-{
-	sf::Vector2i lastLeftClick;
-	sf::Vector2i lastRightClick;
-} Control;
-
-Control tick(sf::Window &window, Cube::Cube &cube, Control &controlState)
+State tick(sf::Window &window, State state)
 {
 	// Control sensitivities
 	float rotationSpeed = 300.0;
@@ -190,53 +226,53 @@ Control tick(sf::Window &window, Cube::Cube &cube, Control &controlState)
 	// Left click drag for rotation
 	if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
 	{
-		if (controlState.lastLeftClick == sf::Vector2i(-1, -1) || controlState.lastLeftClick == currPosition)
+		if (state.control.lastLeftClick == sf::Vector2i(-1, -1) || state.control.lastLeftClick == currPosition)
 		{
-			controlState.lastLeftClick = currPosition;
+			state.control.lastLeftClick = currPosition;
 		}
 		else
 		{
-			sf::Vector2i direction = currPosition - controlState.lastLeftClick;
+			sf::Vector2i direction = currPosition - state.control.lastLeftClick;
 			glm::vec3 zPos(0.0, 0.0, 1.0);
 			glm::vec3 rotationAxis = glm::cross(zPos, glm::vec3(direction.x, -direction.y, 0.0));
 			float distance = glm::length(rotationAxis) / (float)window.getSize().x * rotationSpeed;
 			std::cout << "Angle: " << distance << "\n";
 
 			rotationAxis = rotationAxis / distance;
-			cube.rotate(glm::radians(distance), glm::normalize(rotationAxis));
-			controlState.lastLeftClick = currPosition;
+			state.cubeList[0]->rotate(glm::radians(distance), glm::normalize(rotationAxis));
+			state.control.lastLeftClick = currPosition;
 		}
 	}
 	else
 	{
-		controlState.lastLeftClick = sf::Vector2i(-1, -1);
+		state.control.lastLeftClick = sf::Vector2i(-1, -1);
 	}
 
 	// Right click for movement
 	if (sf::Mouse::isButtonPressed(sf::Mouse::Right))
 	{
-		if (controlState.lastRightClick == sf::Vector2i(-1, -1) || controlState.lastRightClick == currPosition)
+		if (state.control.lastRightClick == sf::Vector2i(-1, -1) || state.control.lastRightClick == currPosition)
 		{
-			controlState.lastRightClick = currPosition;
+			state.control.lastRightClick = currPosition;
 		}
 		else
 		{
-			sf::Vector2i direction = currPosition - controlState.lastRightClick;
+			sf::Vector2i direction = currPosition - state.control.lastRightClick;
 			glm::vec3 directionVec(direction.x, -direction.y, 0.0);
-			cube.move(directionVec * movementSpeed);
+			state.cubeList[0]->move(directionVec * movementSpeed);
 
-			controlState.lastRightClick = currPosition;
+			state.control.lastRightClick = currPosition;
 		}
 	}
 	else
 	{
-		controlState.lastRightClick = sf::Vector2i(-1, -1);
+		state.control.lastRightClick = sf::Vector2i(-1, -1);
 	}
 
-	return controlState;
+	return state;
 }
 
-void handleEvents(sf::Window &window, sf::Event event, Cube::Cube &cube)
+void handleEvents(sf::Window &window, sf::Event event, State state)
 {
 	// Scale speed
 	float zoomSpeed = 0.2;
@@ -254,7 +290,7 @@ void handleEvents(sf::Window &window, sf::Event event, Cube::Cube &cube)
 
 	case sf::Event::MouseWheelMoved:
 		float wheelMovement = event.mouseWheel.delta;
-		cube.move(wheelMovement * glm::vec3(0.0, 0.0, zoomSpeed));
+		state.cubeList[0]->move(wheelMovement * glm::vec3(0.0, 0.0, zoomSpeed));
 		break;
 	}
 }
@@ -273,43 +309,45 @@ int main()
 
 	initialize();
 
+	// Render ID struct initilization
+	Glid glid;
+
 	// Loading shaders
-	std::vector<GLuint> shaders(2);
-	compileShaders(shaders);
+	compileShaders(glid);
 
-	// Loading cube data
-	Cube::Cube cube(0.5f, glm::vec3(0.0, 0.0, -2.0), glm::vec3(0.0, 0.0, 1.0));
+	// Initialization of entities
+	// Player initialization
+	Player::Player player(1.0, glm::vec3(0.0), glm::vec3(0.0, 0.0, -1.0));
+
+	// Instantiating control state
+	Control controlState{
+		sf::Vector2i(-1, -1),
+		sf::Vector2i(-1, -1),
+		true};
+
+	// Creating game state
+	State state(player, controlState);
+
+	// Making a cube
+	Cube::Cube cube1(0.5f, glm::vec3(0.0, 0.0, -2.0), glm::vec3(0.0, 0.0, 1.0));
+	// Adding cube
+	state.addEntity(cube1);
+	std::cout << "cube list size" << state.cubeList.size() << "\n";
+
 	// Creating vao's
-	std::vector<GLuint> vao(2);
-	glGenVertexArrays(2, &vao[0]);
-	loadData(cube, vao);
+	loadData(glid);
 
-	// Setting projection matrix
-	glm::mat4 projectionMatrix = glm::perspective(
-		glm::radians(90.0f),
-		4.0f / 3.0f,
-		0.1f,
-		100.0f);
-
-	// Setting view matrix
-	glm::mat4 cameraMatrix = glm::lookAt(
-		glm::vec3(0.0f, 0.0f, 0.0f),
-		glm::vec3(0.0f, 0.0f, -1.0f),
-		glm::vec3(0.0f, 1.0f, 0.0f));
-
-	std::vector<GLint> MVPLocations(3);
-	MVPLocations[0] = glGetUniformLocation(shaders[0], "MVP");
-	MVPLocations[2] = glGetUniformLocation(shaders[0], "Model");
-	MVPLocations[1] = glGetUniformLocation(shaders[1], "MVP");
+	// Finding uniforms
+	glid.uniform.push_back(glGetUniformLocation(glid.shader[0], "MVP"));
+	glid.uniform.push_back(glGetUniformLocation(glid.shader[0], "Model"));
+	glid.uniform.push_back(glGetUniformLocation(glid.shader[1], "MVP"));
+	std::cout << "uniform id's" << glid.uniform[0] << ", " << glid.uniform[1] << ", " << glid.uniform[2] << "\n";
 
 	// Clock
 	sf::Clock clock;
 	double t = 0.0;
 	double dt = 1.0 / 144.0;
 	double accumulator = 0.0;
-	Control controlState{
-		sf::Vector2i(-1, -1),
-		sf::Vector2i(-1, -1)};
 
 	while (window.isOpen())
 	{
@@ -320,25 +358,28 @@ int main()
 		{
 			while (window.pollEvent(event))
 			{
-				handleEvents(window, event, cube);
+				if (event.type == sf::Event::LostFocus)
+				{
+					state.control.windowFocused = false;
+				}
+				else if (event.type == sf::Event::GainedFocus)
+				{
+					state.control.windowFocused = true;
+				}
+				if (state.control.windowFocused)
+				{
+					handleEvents(window, event, state);
+				}
 			}
-			// Physics
-			// OR rather, controls
-			controlState = tick(window, cube, controlState);
-			// std::cout << "Ticked\n";
+			// Physics and controls
+			state = tick(window, state);
 
 			t += dt;
 			accumulator -= dt;
 		}
-		glm::mat4 modelMatrix = cube.genModelMatrix();
-		glm::mat4 MVP = projectionMatrix * cameraMatrix * modelMatrix;
-		glUseProgram(shaders[0]);
-		glUniformMatrix4fv(MVPLocations[0], 1, GL_FALSE, &MVP[0][0]);
-		glUniformMatrix4fv(MVPLocations[2], 1, GL_FALSE, &modelMatrix[0][0]);
-		glUseProgram(shaders[1]);
-		glUniformMatrix4fv(MVPLocations[1], 1, GL_FALSE, &MVP[0][0]);
+
 		// Render
-		render(vao, shaders, cube);
+		render(window, glid, state);
 		window.display();
 	}
 }

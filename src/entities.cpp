@@ -5,7 +5,25 @@
 #include <iostream>
 #include "tools/utility.hpp"
 
-// Base class Entity definitions
+/**
+ * Game state object definitions
+ */
+State::State(Player::Player &player, Control &control)
+{
+	this->player = player;
+	this->control = control;
+	std::vector<Cube::Cube *> cubeVector;
+	this->cubeList = cubeVector;
+}
+
+void State::addEntity(Cube::Cube &entity)
+{
+	this->cubeList.push_back(&entity);
+}
+
+/**
+ * Base class Entity definitions
+ * */
 
 void Entity::Entity::rotate(float angle, glm::vec3 axis)
 {
@@ -25,6 +43,36 @@ void Entity::Entity::scale(float diff)
 		size += diff;
 	}
 }
+
+/**
+ * Player class memeber definitions
+ * */
+
+/**
+ * @brief Construct a new Player object
+ * 
+ * @param height Height of the player camera from foot
+ * @param footPosition 
+ * @param facing 
+ */
+Player::Player::Player(float height, glm::vec3 footPosition, glm::vec3 facing)
+{
+	this->height = height;
+	this->position = footPosition;
+	this->faceDirection = facing;
+	this->fov = 90.0f;
+}
+
+void Player::Player::rotate(float angle, glm::vec3 axis)
+{
+	glm::quat newQuat = glm::angleAxis(angle, glm::normalize(axis));
+	glm::mat4 rotationMatrix = glm::toMat4(newQuat);
+	this->faceDirection = rotationMatrix * glm::vec4(this->faceDirection, 0.0);
+}
+
+/**
+ * Cube class member definitions
+ * */
 
 Cube::Cube::Cube(float radius, glm::vec3 position, glm::vec3 eulerOrientation)
 {
