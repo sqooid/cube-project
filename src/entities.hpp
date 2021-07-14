@@ -4,10 +4,11 @@
 
 #include <vector>
 #include <GL/glew.h>
-#include <glm/vec3.hpp>
+#include <glm/gtc/matrix_transform.hpp>
+#include <glm/gtx/transform.hpp>
 #include <glm/gtx/quaternion.hpp>
-#include <glm/mat4x4.hpp>
-#include <SFML/Graphics.hpp>
+#include <iostream>
+#include "tools/utility.hpp"
 
 /**
  * @brief Enumeration for types of entites
@@ -44,6 +45,18 @@ namespace Player
         float height;
         float fov;
         glm::vec3 faceDirection;
+    };
+}
+
+namespace Floor
+{
+    class Floor
+    {
+    public:
+        Floor(float spacing = 1.0f, float renderDistance = 10.0f, float floorHeight = 0.0f);
+
+        float spacing;
+        std::vector<GLfloat> vertices;
     };
 }
 
@@ -126,9 +139,11 @@ namespace Cube
 
 typedef struct Control
 {
-    sf::Vector2i lastLeftClick;
-    sf::Vector2i lastRightClick;
-    bool windowFocused;
+    bool bWindowFocused;
+    double wPressTime;
+    double sPressTime;
+    double aPressTime;
+    double dPressTime;
 } Control;
 
 typedef struct Glid
@@ -155,10 +170,11 @@ typedef struct Glid
 class State
 {
 public:
-    State(Player::Player &player, Control &control);
+    State(Player::Player &player, Control &control, Floor::Floor &floor);
 
     Player::Player player;
     Control control;
+    Floor::Floor floor;
     std::vector<Cube::Cube *> cubeList;
 
     void addEntity(Cube::Cube &entity);

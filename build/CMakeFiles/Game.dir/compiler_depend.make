@@ -55,9 +55,11 @@ CMakeFiles/Game.dir/src/entities.cpp.obj: ../src/entities.cpp \
   C:/MinGW/lib/gcc/mingw32/6.3.0/include/stddef.h \
   C:/MinGW/include/GL/glu.h \
   C:/MinGW/include/GL/gl.h \
-  C:/glm/glm/vec3.hpp \
-  C:/glm/glm/ext/vector_bool3.hpp \
-  C:/glm/glm/detail/type_vec3.hpp \
+  C:/glm/glm/gtc/matrix_transform.hpp \
+  C:/glm/glm/mat4x4.hpp \
+  C:/glm/glm/ext/matrix_double4x4.hpp \
+  C:/glm/glm/detail/type_mat4x4.hpp \
+  C:/glm/glm/detail/type_vec4.hpp \
   C:/glm/glm/detail/qualifier.hpp \
   C:/glm/glm/detail/setup.hpp \
   C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/cassert \
@@ -65,33 +67,12 @@ CMakeFiles/Game.dir/src/entities.cpp.obj: ../src/entities.cpp \
   C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/cstddef \
   C:/glm/glm/simd/platform.h \
   C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/cstdint \
-  C:/glm/glm/detail/type_vec3.inl \
+  C:/glm/glm/detail/type_vec4.inl \
   C:/glm/glm/detail/compute_vector_relational.hpp \
   C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/limits \
-  C:/glm/glm/ext/vector_bool3_precision.hpp \
-  C:/glm/glm/ext/vector_float3.hpp \
-  C:/glm/glm/ext/vector_float3_precision.hpp \
-  C:/glm/glm/ext/vector_double3.hpp \
-  C:/glm/glm/ext/vector_double3_precision.hpp \
-  C:/glm/glm/ext/vector_int3.hpp \
-  C:/glm/glm/ext/vector_int3_sized.hpp \
-  C:/glm/glm/ext/scalar_int_sized.hpp \
+  C:/glm/glm/detail/type_mat4x4.inl \
+  C:/glm/glm/matrix.hpp \
   C:/glm/glm/detail/setup.hpp \
-  C:/glm/glm/ext/vector_uint3.hpp \
-  C:/glm/glm/ext/vector_uint3_sized.hpp \
-  C:/glm/glm/ext/scalar_uint_sized.hpp \
-  C:/glm/glm/gtx/quaternion.hpp \
-  C:/glm/glm/glm.hpp \
-  C:/glm/glm/detail/_fixes.hpp \
-  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/cmath \
-  C:/MinGW/include/math.h \
-  C:/glm/glm/detail/setup.hpp \
-  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/climits \
-  C:/MinGW/include/limits.h \
-  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/cfloat \
-  C:/MinGW/lib/gcc/mingw32/6.3.0/include/float.h \
-  C:/MinGW/include/float.h \
-  C:/glm/glm/fwd.hpp \
   C:/glm/glm/vec2.hpp \
   C:/glm/glm/ext/vector_bool2.hpp \
   C:/glm/glm/detail/type_vec2.hpp \
@@ -103,12 +84,26 @@ CMakeFiles/Game.dir/src/entities.cpp.obj: ../src/entities.cpp \
   C:/glm/glm/ext/vector_double2_precision.hpp \
   C:/glm/glm/ext/vector_int2.hpp \
   C:/glm/glm/ext/vector_int2_sized.hpp \
+  C:/glm/glm/ext/scalar_int_sized.hpp \
+  C:/glm/glm/detail/setup.hpp \
   C:/glm/glm/ext/vector_uint2.hpp \
   C:/glm/glm/ext/vector_uint2_sized.hpp \
+  C:/glm/glm/ext/scalar_uint_sized.hpp \
+  C:/glm/glm/vec3.hpp \
+  C:/glm/glm/ext/vector_bool3.hpp \
+  C:/glm/glm/detail/type_vec3.hpp \
+  C:/glm/glm/detail/type_vec3.inl \
+  C:/glm/glm/ext/vector_bool3_precision.hpp \
+  C:/glm/glm/ext/vector_float3.hpp \
+  C:/glm/glm/ext/vector_float3_precision.hpp \
+  C:/glm/glm/ext/vector_double3.hpp \
+  C:/glm/glm/ext/vector_double3_precision.hpp \
+  C:/glm/glm/ext/vector_int3.hpp \
+  C:/glm/glm/ext/vector_int3_sized.hpp \
+  C:/glm/glm/ext/vector_uint3.hpp \
+  C:/glm/glm/ext/vector_uint3_sized.hpp \
   C:/glm/glm/vec4.hpp \
   C:/glm/glm/ext/vector_bool4.hpp \
-  C:/glm/glm/detail/type_vec4.hpp \
-  C:/glm/glm/detail/type_vec4.inl \
   C:/glm/glm/ext/vector_bool4_precision.hpp \
   C:/glm/glm/ext/vector_float4.hpp \
   C:/glm/glm/ext/vector_float4_precision.hpp \
@@ -122,7 +117,9 @@ CMakeFiles/Game.dir/src/entities.cpp.obj: ../src/entities.cpp \
   C:/glm/glm/ext/matrix_double2x2.hpp \
   C:/glm/glm/detail/type_mat2x2.hpp \
   C:/glm/glm/detail/type_mat2x2.inl \
-  C:/glm/glm/matrix.hpp \
+  C:/glm/glm/ext/matrix_double2x2_precision.hpp \
+  C:/glm/glm/ext/matrix_float2x2.hpp \
+  C:/glm/glm/ext/matrix_float2x2_precision.hpp \
   C:/glm/glm/mat2x3.hpp \
   C:/glm/glm/ext/matrix_double2x3.hpp \
   C:/glm/glm/detail/type_mat2x3.hpp \
@@ -172,51 +169,56 @@ CMakeFiles/Game.dir/src/entities.cpp.obj: ../src/entities.cpp \
   C:/glm/glm/ext/matrix_double4x3_precision.hpp \
   C:/glm/glm/ext/matrix_float4x3.hpp \
   C:/glm/glm/ext/matrix_float4x3_precision.hpp \
-  C:/glm/glm/mat4x4.hpp \
-  C:/glm/glm/ext/matrix_double4x4.hpp \
-  C:/glm/glm/detail/type_mat4x4.hpp \
-  C:/glm/glm/detail/type_mat4x4.inl \
-  C:/glm/glm/ext/matrix_double4x4_precision.hpp \
-  C:/glm/glm/ext/matrix_float4x4.hpp \
-  C:/glm/glm/ext/matrix_float4x4_precision.hpp \
   C:/glm/glm/detail/func_matrix.inl \
   C:/glm/glm/geometric.hpp \
   C:/glm/glm/detail/func_geometric.inl \
   C:/glm/glm/exponential.hpp \
   C:/glm/glm/detail/type_vec1.hpp \
   C:/glm/glm/detail/type_vec1.inl \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/cmath \
+  C:/MinGW/include/math.h \
   C:/glm/glm/detail/func_exponential.inl \
   C:/glm/glm/vector_relational.hpp \
   C:/glm/glm/detail/func_vector_relational.inl \
   C:/glm/glm/detail/_vectorize.hpp \
   C:/glm/glm/common.hpp \
+  C:/glm/glm/detail/_fixes.hpp \
   C:/glm/glm/detail/func_common.inl \
   C:/glm/glm/detail/compute_common.hpp \
   C:/glm/glm/detail/setup.hpp \
-  C:/glm/glm/ext/matrix_double2x2_precision.hpp \
-  C:/glm/glm/ext/matrix_float2x2.hpp \
-  C:/glm/glm/ext/matrix_float2x2_precision.hpp \
-  C:/glm/glm/trigonometric.hpp \
-  C:/glm/glm/detail/func_trigonometric.inl \
-  C:/glm/glm/packing.hpp \
-  C:/glm/glm/detail/func_packing.inl \
-  C:/glm/glm/detail/type_half.hpp \
-  C:/glm/glm/detail/type_half.inl \
-  C:/glm/glm/integer.hpp \
-  C:/glm/glm/detail/func_integer.inl \
+  C:/glm/glm/ext/matrix_double4x4_precision.hpp \
+  C:/glm/glm/ext/matrix_float4x4.hpp \
+  C:/glm/glm/ext/matrix_float4x4_precision.hpp \
+  C:/glm/glm/ext/matrix_projection.hpp \
   C:/glm/glm/gtc/constants.hpp \
   C:/glm/glm/ext/scalar_constants.hpp \
   C:/glm/glm/ext/scalar_constants.inl \
   C:/glm/glm/gtc/constants.inl \
-  C:/glm/glm/gtc/quaternion.hpp \
-  C:/glm/glm/gtc/matrix_transform.hpp \
-  C:/glm/glm/ext/matrix_projection.hpp \
+  C:/glm/glm/trigonometric.hpp \
+  C:/glm/glm/detail/func_trigonometric.inl \
   C:/glm/glm/ext/matrix_projection.inl \
   C:/glm/glm/ext/matrix_clip_space.hpp \
   C:/glm/glm/ext/matrix_clip_space.inl \
   C:/glm/glm/ext/matrix_transform.hpp \
   C:/glm/glm/ext/matrix_transform.inl \
   C:/glm/glm/gtc/matrix_transform.inl \
+  C:/glm/glm/gtx/transform.hpp \
+  C:/glm/glm/glm.hpp \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/climits \
+  C:/MinGW/include/limits.h \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/cfloat \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/float.h \
+  C:/MinGW/include/float.h \
+  C:/glm/glm/fwd.hpp \
+  C:/glm/glm/packing.hpp \
+  C:/glm/glm/detail/func_packing.inl \
+  C:/glm/glm/detail/type_half.hpp \
+  C:/glm/glm/detail/type_half.inl \
+  C:/glm/glm/integer.hpp \
+  C:/glm/glm/detail/func_integer.inl \
+  C:/glm/glm/gtx/transform.inl \
+  C:/glm/glm/gtx/quaternion.hpp \
+  C:/glm/glm/gtc/quaternion.hpp \
   C:/glm/glm/ext/vector_relational.hpp \
   C:/glm/glm/ext/vector_relational.inl \
   C:/glm/glm/detail/type_float.hpp \
@@ -248,14 +250,7 @@ CMakeFiles/Game.dir/src/entities.cpp.obj: ../src/entities.cpp \
   C:/glm/glm/gtx/component_wise.inl \
   C:/glm/glm/gtx/norm.inl \
   C:/glm/glm/gtx/quaternion.inl \
-  C:/SFML-2.5.1/include/SFML/Graphics.hpp \
-  C:/SFML-2.5.1/include/SFML/Window.hpp \
-  C:/SFML-2.5.1/include/SFML/System.hpp \
-  C:/SFML-2.5.1/include/SFML/Config.hpp \
-  C:/SFML-2.5.1/include/SFML/System/Clock.hpp \
-  C:/SFML-2.5.1/include/SFML/System/Export.hpp \
-  C:/SFML-2.5.1/include/SFML/System/Time.hpp \
-  C:/SFML-2.5.1/include/SFML/System/Err.hpp \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/iostream \
   C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/ostream \
   C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/ios \
   C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/iosfwd \
@@ -319,6 +314,760 @@ CMakeFiles/Game.dir/src/entities.cpp.obj: ../src/entities.cpp \
   C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/locale_facets.tcc \
   C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/basic_ios.tcc \
   C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/ostream.tcc \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/istream \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/istream.tcc \
+  ../src/tools/utility.hpp
+
+CMakeFiles/Game.dir/src/game.cpp.obj: ../src/game.cpp \
+  ../src/game.hpp \
+  C:/glm/glm/mat4x4.hpp \
+  C:/glm/glm/ext/matrix_double4x4.hpp \
+  C:/glm/glm/detail/type_mat4x4.hpp \
+  C:/glm/glm/detail/type_vec4.hpp \
+  C:/glm/glm/detail/qualifier.hpp \
+  C:/glm/glm/detail/setup.hpp \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/cassert \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/mingw32/bits/c++config.h \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/mingw32/bits/os_defines.h \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/mingw32/bits/cpu_defines.h \
+  C:/MinGW/include/assert.h \
+  C:/MinGW/include/_mingw.h \
+  C:/MinGW/include/msvcrtver.h \
+  C:/MinGW/include/w32api.h \
+  C:/MinGW/include/sdkddkver.h \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/cstddef \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/stddef.h \
+  C:/glm/glm/simd/platform.h \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/cstdint \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/stdint.h \
+  C:/MinGW/include/stdint.h \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/type_traits \
+  C:/glm/glm/detail/type_vec4.inl \
+  C:/glm/glm/detail/compute_vector_relational.hpp \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/limits \
+  C:/glm/glm/detail/type_mat4x4.inl \
+  C:/glm/glm/matrix.hpp \
+  C:/glm/glm/detail/setup.hpp \
+  C:/glm/glm/vec2.hpp \
+  C:/glm/glm/ext/vector_bool2.hpp \
+  C:/glm/glm/detail/type_vec2.hpp \
+  C:/glm/glm/detail/type_vec2.inl \
+  C:/glm/glm/ext/vector_bool2_precision.hpp \
+  C:/glm/glm/ext/vector_float2.hpp \
+  C:/glm/glm/ext/vector_float2_precision.hpp \
+  C:/glm/glm/ext/vector_double2.hpp \
+  C:/glm/glm/ext/vector_double2_precision.hpp \
+  C:/glm/glm/ext/vector_int2.hpp \
+  C:/glm/glm/ext/vector_int2_sized.hpp \
+  C:/glm/glm/ext/scalar_int_sized.hpp \
+  C:/glm/glm/detail/setup.hpp \
+  C:/glm/glm/ext/vector_uint2.hpp \
+  C:/glm/glm/ext/vector_uint2_sized.hpp \
+  C:/glm/glm/ext/scalar_uint_sized.hpp \
+  C:/glm/glm/vec3.hpp \
+  C:/glm/glm/ext/vector_bool3.hpp \
+  C:/glm/glm/detail/type_vec3.hpp \
+  C:/glm/glm/detail/type_vec3.inl \
+  C:/glm/glm/ext/vector_bool3_precision.hpp \
+  C:/glm/glm/ext/vector_float3.hpp \
+  C:/glm/glm/ext/vector_float3_precision.hpp \
+  C:/glm/glm/ext/vector_double3.hpp \
+  C:/glm/glm/ext/vector_double3_precision.hpp \
+  C:/glm/glm/ext/vector_int3.hpp \
+  C:/glm/glm/ext/vector_int3_sized.hpp \
+  C:/glm/glm/ext/vector_uint3.hpp \
+  C:/glm/glm/ext/vector_uint3_sized.hpp \
+  C:/glm/glm/vec4.hpp \
+  C:/glm/glm/ext/vector_bool4.hpp \
+  C:/glm/glm/ext/vector_bool4_precision.hpp \
+  C:/glm/glm/ext/vector_float4.hpp \
+  C:/glm/glm/ext/vector_float4_precision.hpp \
+  C:/glm/glm/ext/vector_double4.hpp \
+  C:/glm/glm/ext/vector_double4_precision.hpp \
+  C:/glm/glm/ext/vector_int4.hpp \
+  C:/glm/glm/ext/vector_int4_sized.hpp \
+  C:/glm/glm/ext/vector_uint4.hpp \
+  C:/glm/glm/ext/vector_uint4_sized.hpp \
+  C:/glm/glm/mat2x2.hpp \
+  C:/glm/glm/ext/matrix_double2x2.hpp \
+  C:/glm/glm/detail/type_mat2x2.hpp \
+  C:/glm/glm/detail/type_mat2x2.inl \
+  C:/glm/glm/ext/matrix_double2x2_precision.hpp \
+  C:/glm/glm/ext/matrix_float2x2.hpp \
+  C:/glm/glm/ext/matrix_float2x2_precision.hpp \
+  C:/glm/glm/mat2x3.hpp \
+  C:/glm/glm/ext/matrix_double2x3.hpp \
+  C:/glm/glm/detail/type_mat2x3.hpp \
+  C:/glm/glm/detail/type_mat2x3.inl \
+  C:/glm/glm/ext/matrix_double2x3_precision.hpp \
+  C:/glm/glm/ext/matrix_float2x3.hpp \
+  C:/glm/glm/ext/matrix_float2x3_precision.hpp \
+  C:/glm/glm/mat2x4.hpp \
+  C:/glm/glm/ext/matrix_double2x4.hpp \
+  C:/glm/glm/detail/type_mat2x4.hpp \
+  C:/glm/glm/detail/type_mat2x4.inl \
+  C:/glm/glm/ext/matrix_double2x4_precision.hpp \
+  C:/glm/glm/ext/matrix_float2x4.hpp \
+  C:/glm/glm/ext/matrix_float2x4_precision.hpp \
+  C:/glm/glm/mat3x2.hpp \
+  C:/glm/glm/ext/matrix_double3x2.hpp \
+  C:/glm/glm/detail/type_mat3x2.hpp \
+  C:/glm/glm/detail/type_mat3x2.inl \
+  C:/glm/glm/ext/matrix_double3x2_precision.hpp \
+  C:/glm/glm/ext/matrix_float3x2.hpp \
+  C:/glm/glm/ext/matrix_float3x2_precision.hpp \
+  C:/glm/glm/mat3x3.hpp \
+  C:/glm/glm/ext/matrix_double3x3.hpp \
+  C:/glm/glm/detail/type_mat3x3.hpp \
+  C:/glm/glm/detail/type_mat3x3.inl \
+  C:/glm/glm/ext/matrix_double3x3_precision.hpp \
+  C:/glm/glm/ext/matrix_float3x3.hpp \
+  C:/glm/glm/ext/matrix_float3x3_precision.hpp \
+  C:/glm/glm/mat3x4.hpp \
+  C:/glm/glm/ext/matrix_double3x4.hpp \
+  C:/glm/glm/detail/type_mat3x4.hpp \
+  C:/glm/glm/detail/type_mat3x4.inl \
+  C:/glm/glm/ext/matrix_double3x4_precision.hpp \
+  C:/glm/glm/ext/matrix_float3x4.hpp \
+  C:/glm/glm/ext/matrix_float3x4_precision.hpp \
+  C:/glm/glm/mat4x2.hpp \
+  C:/glm/glm/ext/matrix_double4x2.hpp \
+  C:/glm/glm/detail/type_mat4x2.hpp \
+  C:/glm/glm/detail/type_mat4x2.inl \
+  C:/glm/glm/ext/matrix_double4x2_precision.hpp \
+  C:/glm/glm/ext/matrix_float4x2.hpp \
+  C:/glm/glm/ext/matrix_float4x2_precision.hpp \
+  C:/glm/glm/mat4x3.hpp \
+  C:/glm/glm/ext/matrix_double4x3.hpp \
+  C:/glm/glm/detail/type_mat4x3.hpp \
+  C:/glm/glm/detail/type_mat4x3.inl \
+  C:/glm/glm/ext/matrix_double4x3_precision.hpp \
+  C:/glm/glm/ext/matrix_float4x3.hpp \
+  C:/glm/glm/ext/matrix_float4x3_precision.hpp \
+  C:/glm/glm/detail/func_matrix.inl \
+  C:/glm/glm/geometric.hpp \
+  C:/glm/glm/detail/func_geometric.inl \
+  C:/glm/glm/exponential.hpp \
+  C:/glm/glm/detail/type_vec1.hpp \
+  C:/glm/glm/detail/type_vec1.inl \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/cmath \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/cpp_type_traits.h \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/ext/type_traits.h \
+  C:/MinGW/include/math.h \
+  C:/glm/glm/detail/func_exponential.inl \
+  C:/glm/glm/vector_relational.hpp \
+  C:/glm/glm/detail/func_vector_relational.inl \
+  C:/glm/glm/detail/_vectorize.hpp \
+  C:/glm/glm/common.hpp \
+  C:/glm/glm/detail/_fixes.hpp \
+  C:/glm/glm/detail/func_common.inl \
+  C:/glm/glm/detail/compute_common.hpp \
+  C:/glm/glm/detail/setup.hpp \
+  C:/glm/glm/ext/matrix_double4x4_precision.hpp \
+  C:/glm/glm/ext/matrix_float4x4.hpp \
+  C:/glm/glm/ext/matrix_float4x4_precision.hpp \
+  C:/glm/glm/gtc/matrix_transform.hpp \
+  C:/glm/glm/ext/matrix_projection.hpp \
+  C:/glm/glm/gtc/constants.hpp \
+  C:/glm/glm/ext/scalar_constants.hpp \
+  C:/glm/glm/ext/scalar_constants.inl \
+  C:/glm/glm/gtc/constants.inl \
+  C:/glm/glm/trigonometric.hpp \
+  C:/glm/glm/detail/func_trigonometric.inl \
+  C:/glm/glm/ext/matrix_projection.inl \
+  C:/glm/glm/ext/matrix_clip_space.hpp \
+  C:/glm/glm/ext/matrix_clip_space.inl \
+  C:/glm/glm/ext/matrix_transform.hpp \
+  C:/glm/glm/ext/matrix_transform.inl \
+  C:/glm/glm/gtc/matrix_transform.inl \
+  C:/glm/glm/gtx/transform.hpp \
+  C:/glm/glm/glm.hpp \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/climits \
+  C:/MinGW/include/limits.h \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/cfloat \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/float.h \
+  C:/MinGW/include/float.h \
+  C:/glm/glm/fwd.hpp \
+  C:/glm/glm/packing.hpp \
+  C:/glm/glm/detail/func_packing.inl \
+  C:/glm/glm/detail/type_half.hpp \
+  C:/glm/glm/detail/type_half.inl \
+  C:/glm/glm/integer.hpp \
+  C:/glm/glm/detail/func_integer.inl \
+  C:/glm/glm/gtx/transform.inl \
+  C:/glm/glm/gtx/quaternion.hpp \
+  C:/glm/glm/gtc/quaternion.hpp \
+  C:/glm/glm/ext/vector_relational.hpp \
+  C:/glm/glm/ext/vector_relational.inl \
+  C:/glm/glm/detail/type_float.hpp \
+  C:/glm/glm/ext/quaternion_common.hpp \
+  C:/glm/glm/ext/quaternion_geometric.hpp \
+  C:/glm/glm/ext/quaternion_geometric.inl \
+  C:/glm/glm/ext/quaternion_common.inl \
+  C:/glm/glm/ext/quaternion_float.hpp \
+  C:/glm/glm/detail/type_quat.hpp \
+  C:/glm/glm/ext/quaternion_relational.hpp \
+  C:/glm/glm/ext/quaternion_relational.inl \
+  C:/glm/glm/detail/type_quat.inl \
+  C:/glm/glm/ext/quaternion_float_precision.hpp \
+  C:/glm/glm/ext/quaternion_double.hpp \
+  C:/glm/glm/ext/quaternion_double_precision.hpp \
+  C:/glm/glm/ext/quaternion_trigonometric.hpp \
+  C:/glm/glm/ext/quaternion_trigonometric.inl \
+  C:/glm/glm/ext/quaternion_transform.hpp \
+  C:/glm/glm/ext/quaternion_transform.inl \
+  C:/glm/glm/gtc/quaternion.inl \
+  C:/glm/glm/gtc/epsilon.hpp \
+  C:/glm/glm/detail/setup.hpp \
+  C:/glm/glm/gtc/epsilon.inl \
+  C:/glm/glm/ext/quaternion_exponential.hpp \
+  C:/glm/glm/ext/quaternion_exponential.inl \
+  C:/glm/glm/gtx/norm.hpp \
+  C:/glm/glm/gtx/component_wise.hpp \
+  C:/glm/glm/detail/setup.hpp \
+  C:/glm/glm/gtx/component_wise.inl \
+  C:/glm/glm/gtx/norm.inl \
+  C:/glm/glm/gtx/quaternion.inl \
+  C:/SFML-2.5.1/include/SFML/Graphics.hpp \
+  C:/SFML-2.5.1/include/SFML/Window.hpp \
+  C:/SFML-2.5.1/include/SFML/System.hpp \
+  C:/SFML-2.5.1/include/SFML/Config.hpp \
+  C:/SFML-2.5.1/include/SFML/System/Clock.hpp \
+  C:/SFML-2.5.1/include/SFML/System/Export.hpp \
+  C:/SFML-2.5.1/include/SFML/System/Time.hpp \
+  C:/SFML-2.5.1/include/SFML/System/Err.hpp \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/ostream \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/ios \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/iosfwd \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/stringfwd.h \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/memoryfwd.h \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/postypes.h \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/cwchar \
+  C:/MinGW/include/wchar.h \
+  C:/MinGW/include/wctype.h \
+  C:/MinGW/include/sys/types.h \
+  C:/MinGW/include/stdio.h \
+  C:/MinGW/include/sys/types.h \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/stdarg.h \
+  C:/MinGW/include/stdlib.h \
+  C:/MinGW/include/direct.h \
+  C:/MinGW/include/sys/stat.h \
+  C:/MinGW/include/io.h \
+  C:/MinGW/include/stdint.h \
+  C:/MinGW/include/time.h \
+  C:/MinGW/include/locale.h \
+  C:/MinGW/include/process.h \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/exception \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/atomic_lockfree_defines.h \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/exception_ptr.h \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/exception_defines.h \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/nested_exception.h \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/move.h \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/concept_check.h \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/char_traits.h \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/stl_algobase.h \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/functexcept.h \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/ext/numeric_traits.h \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/stl_pair.h \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/stl_iterator_base_types.h \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/stl_iterator_base_funcs.h \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/debug/assertions.h \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/stl_iterator.h \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/ptr_traits.h \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/debug/debug.h \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/predefined_ops.h \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/localefwd.h \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/mingw32/bits/c++locale.h \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/clocale \
+  C:/MinGW/include/locale.h \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/cctype \
+  C:/MinGW/include/ctype.h \
+  C:/MinGW/include/wctype.h \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/ios_base.h \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/ext/atomicity.h \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/mingw32/bits/gthr.h \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/mingw32/bits/gthr-default.h \
+  C:/MinGW/include/errno.h \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/mingw32/bits/atomic_word.h \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/locale_classes.h \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/string \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/allocator.h \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/mingw32/bits/c++allocator.h \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/ext/new_allocator.h \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/new \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/ostream_insert.h \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/cxxabi_forced.h \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/stl_function.h \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/backward/binders.h \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/range_access.h \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/initializer_list \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/basic_string.h \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/ext/alloc_traits.h \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/alloc_traits.h \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/ext/string_conversions.h \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/cstdlib \
+  C:/MinGW/include/stdlib.h \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/cstdio \
+  C:/MinGW/include/stdio.h \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/cerrno \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/functional_hash.h \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/hash_bytes.h \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/basic_string.tcc \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/locale_classes.tcc \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/system_error \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/mingw32/bits/error_constants.h \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/stdexcept \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/streambuf \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/streambuf.tcc \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/basic_ios.h \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/locale_facets.h \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/cwctype \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/mingw32/bits/ctype_base.h \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/streambuf_iterator.h \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/mingw32/bits/ctype_inline.h \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/locale_facets.tcc \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/basic_ios.tcc \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/ostream.tcc \
+  C:/SFML-2.5.1/include/SFML/System/FileInputStream.hpp \
+  C:/SFML-2.5.1/include/SFML/System/InputStream.hpp \
+  C:/SFML-2.5.1/include/SFML/System/NonCopyable.hpp \
+  C:/SFML-2.5.1/include/SFML/System/Lock.hpp \
+  C:/SFML-2.5.1/include/SFML/System/MemoryInputStream.hpp \
+  C:/SFML-2.5.1/include/SFML/System/Mutex.hpp \
+  C:/SFML-2.5.1/include/SFML/System/Sleep.hpp \
+  C:/SFML-2.5.1/include/SFML/System/String.hpp \
+  C:/SFML-2.5.1/include/SFML/System/Utf.hpp \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/algorithm \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/utility \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/stl_relops.h \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/stl_algo.h \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/algorithmfwd.h \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/stl_heap.h \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/stl_tempbuf.h \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/stl_construct.h \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/uniform_int_dist.h \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/locale \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/locale_facets_nonio.h \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/ctime \
+  C:/MinGW/include/time.h \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/mingw32/bits/time_members.h \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/mingw32/bits/messages_members.h \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/codecvt.h \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/locale_facets_nonio.tcc \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/locale_conv.h \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/stringfwd.h \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/allocator.h \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/codecvt.h \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/unique_ptr.h \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/tuple \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/array \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/uses_allocator.h \
+  C:/SFML-2.5.1/include/SFML/System/Utf.inl \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/iterator \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/istream \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/istream.tcc \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/stream_iterator.h \
+  C:/SFML-2.5.1/include/SFML/System/String.inl \
+  C:/SFML-2.5.1/include/SFML/System/Thread.hpp \
+  C:/SFML-2.5.1/include/SFML/System/Thread.inl \
+  C:/SFML-2.5.1/include/SFML/System/ThreadLocal.hpp \
+  C:/SFML-2.5.1/include/SFML/System/ThreadLocalPtr.hpp \
+  C:/SFML-2.5.1/include/SFML/System/ThreadLocalPtr.inl \
+  C:/SFML-2.5.1/include/SFML/System/Vector2.hpp \
+  C:/SFML-2.5.1/include/SFML/System/Vector2.inl \
+  C:/SFML-2.5.1/include/SFML/System/Vector3.hpp \
+  C:/SFML-2.5.1/include/SFML/System/Vector3.inl \
+  C:/SFML-2.5.1/include/SFML/Window/Clipboard.hpp \
+  C:/SFML-2.5.1/include/SFML/Window/Export.hpp \
+  C:/SFML-2.5.1/include/SFML/Window/Context.hpp \
+  C:/SFML-2.5.1/include/SFML/Window/GlResource.hpp \
+  C:/SFML-2.5.1/include/SFML/Window/ContextSettings.hpp \
+  C:/SFML-2.5.1/include/SFML/Window/Cursor.hpp \
+  C:/SFML-2.5.1/include/SFML/Window/Event.hpp \
+  C:/SFML-2.5.1/include/SFML/Window/Joystick.hpp \
+  C:/SFML-2.5.1/include/SFML/Window/Keyboard.hpp \
+  C:/SFML-2.5.1/include/SFML/Window/Mouse.hpp \
+  C:/SFML-2.5.1/include/SFML/Window/Sensor.hpp \
+  C:/SFML-2.5.1/include/SFML/Window/Touch.hpp \
+  C:/SFML-2.5.1/include/SFML/Window/VideoMode.hpp \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/vector \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/stl_uninitialized.h \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/stl_vector.h \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/stl_bvector.h \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/vector.tcc \
+  C:/SFML-2.5.1/include/SFML/Window/Window.hpp \
+  C:/SFML-2.5.1/include/SFML/Window/WindowHandle.hpp \
+  C:/SFML-2.5.1/include/SFML/Window/WindowStyle.hpp \
+  C:/SFML-2.5.1/include/SFML/Graphics/BlendMode.hpp \
+  C:/SFML-2.5.1/include/SFML/Graphics/Export.hpp \
+  C:/SFML-2.5.1/include/SFML/Graphics/CircleShape.hpp \
+  C:/SFML-2.5.1/include/SFML/Graphics/Shape.hpp \
+  C:/SFML-2.5.1/include/SFML/Graphics/Drawable.hpp \
+  C:/SFML-2.5.1/include/SFML/Graphics/RenderStates.hpp \
+  C:/SFML-2.5.1/include/SFML/Graphics/Transform.hpp \
+  C:/SFML-2.5.1/include/SFML/Graphics/Rect.hpp \
+  C:/SFML-2.5.1/include/SFML/Graphics/Rect.inl \
+  C:/SFML-2.5.1/include/SFML/Graphics/Transformable.hpp \
+  C:/SFML-2.5.1/include/SFML/Graphics/VertexArray.hpp \
+  C:/SFML-2.5.1/include/SFML/Graphics/Vertex.hpp \
+  C:/SFML-2.5.1/include/SFML/Graphics/Color.hpp \
+  C:/SFML-2.5.1/include/SFML/Graphics/PrimitiveType.hpp \
+  C:/SFML-2.5.1/include/SFML/Graphics/ConvexShape.hpp \
+  C:/SFML-2.5.1/include/SFML/Graphics/Font.hpp \
+  C:/SFML-2.5.1/include/SFML/Graphics/Glyph.hpp \
+  C:/SFML-2.5.1/include/SFML/Graphics/Texture.hpp \
+  C:/SFML-2.5.1/include/SFML/Graphics/Image.hpp \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/map \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/stl_tree.h \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/ext/aligned_buffer.h \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/stl_map.h \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/stl_multimap.h \
+  C:/SFML-2.5.1/include/SFML/Graphics/RectangleShape.hpp \
+  C:/SFML-2.5.1/include/SFML/Graphics/RenderTarget.hpp \
+  C:/SFML-2.5.1/include/SFML/Graphics/View.hpp \
+  C:/SFML-2.5.1/include/SFML/Graphics/RenderTexture.hpp \
+  C:/SFML-2.5.1/include/SFML/Graphics/RenderWindow.hpp \
+  C:/SFML-2.5.1/include/SFML/Graphics/Shader.hpp \
+  C:/SFML-2.5.1/include/SFML/Graphics/Glsl.hpp \
+  C:/SFML-2.5.1/include/SFML/Graphics/Glsl.inl \
+  C:/SFML-2.5.1/include/SFML/Graphics/Sprite.hpp \
+  C:/SFML-2.5.1/include/SFML/Graphics/Text.hpp \
+  C:/SFML-2.5.1/include/SFML/Graphics/VertexBuffer.hpp \
+  ../src/entities.hpp \
+  C:/glew-2.1.0/include/GL/glew.h \
+  C:/MinGW/include/inttypes.h \
+  C:/MinGW/include/GL/glu.h \
+  C:/MinGW/include/GL/gl.h \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/iostream \
+  ../src/tools/utility.hpp
+
+CMakeFiles/Game.dir/src/gl.cpp.obj: ../src/gl.cpp \
+  ../src/gl.hpp \
+  ../src/entities.hpp \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/vector \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/stl_algobase.h \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/mingw32/bits/c++config.h \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/mingw32/bits/os_defines.h \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/mingw32/bits/cpu_defines.h \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/functexcept.h \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/exception_defines.h \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/cpp_type_traits.h \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/ext/type_traits.h \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/ext/numeric_traits.h \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/stl_pair.h \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/move.h \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/concept_check.h \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/type_traits \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/stl_iterator_base_types.h \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/stl_iterator_base_funcs.h \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/debug/assertions.h \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/stl_iterator.h \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/ptr_traits.h \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/debug/debug.h \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/predefined_ops.h \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/allocator.h \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/mingw32/bits/c++allocator.h \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/ext/new_allocator.h \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/new \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/exception \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/atomic_lockfree_defines.h \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/exception_ptr.h \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/nested_exception.h \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/memoryfwd.h \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/stl_construct.h \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/ext/alloc_traits.h \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/alloc_traits.h \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/stl_uninitialized.h \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/stl_vector.h \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/initializer_list \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/stl_bvector.h \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/functional_hash.h \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/hash_bytes.h \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/range_access.h \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/vector.tcc \
+  C:/glew-2.1.0/include/GL/glew.h \
+  C:/MinGW/include/inttypes.h \
+  C:/MinGW/include/_mingw.h \
+  C:/MinGW/include/msvcrtver.h \
+  C:/MinGW/include/w32api.h \
+  C:/MinGW/include/sdkddkver.h \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/stdint.h \
+  C:/MinGW/include/stdint.h \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/stddef.h \
+  C:/MinGW/include/GL/glu.h \
+  C:/MinGW/include/GL/gl.h \
+  C:/glm/glm/gtc/matrix_transform.hpp \
+  C:/glm/glm/mat4x4.hpp \
+  C:/glm/glm/ext/matrix_double4x4.hpp \
+  C:/glm/glm/detail/type_mat4x4.hpp \
+  C:/glm/glm/detail/type_vec4.hpp \
+  C:/glm/glm/detail/qualifier.hpp \
+  C:/glm/glm/detail/setup.hpp \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/cassert \
+  C:/MinGW/include/assert.h \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/cstddef \
+  C:/glm/glm/simd/platform.h \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/cstdint \
+  C:/glm/glm/detail/type_vec4.inl \
+  C:/glm/glm/detail/compute_vector_relational.hpp \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/limits \
+  C:/glm/glm/detail/type_mat4x4.inl \
+  C:/glm/glm/matrix.hpp \
+  C:/glm/glm/detail/setup.hpp \
+  C:/glm/glm/vec2.hpp \
+  C:/glm/glm/ext/vector_bool2.hpp \
+  C:/glm/glm/detail/type_vec2.hpp \
+  C:/glm/glm/detail/type_vec2.inl \
+  C:/glm/glm/ext/vector_bool2_precision.hpp \
+  C:/glm/glm/ext/vector_float2.hpp \
+  C:/glm/glm/ext/vector_float2_precision.hpp \
+  C:/glm/glm/ext/vector_double2.hpp \
+  C:/glm/glm/ext/vector_double2_precision.hpp \
+  C:/glm/glm/ext/vector_int2.hpp \
+  C:/glm/glm/ext/vector_int2_sized.hpp \
+  C:/glm/glm/ext/scalar_int_sized.hpp \
+  C:/glm/glm/detail/setup.hpp \
+  C:/glm/glm/ext/vector_uint2.hpp \
+  C:/glm/glm/ext/vector_uint2_sized.hpp \
+  C:/glm/glm/ext/scalar_uint_sized.hpp \
+  C:/glm/glm/vec3.hpp \
+  C:/glm/glm/ext/vector_bool3.hpp \
+  C:/glm/glm/detail/type_vec3.hpp \
+  C:/glm/glm/detail/type_vec3.inl \
+  C:/glm/glm/ext/vector_bool3_precision.hpp \
+  C:/glm/glm/ext/vector_float3.hpp \
+  C:/glm/glm/ext/vector_float3_precision.hpp \
+  C:/glm/glm/ext/vector_double3.hpp \
+  C:/glm/glm/ext/vector_double3_precision.hpp \
+  C:/glm/glm/ext/vector_int3.hpp \
+  C:/glm/glm/ext/vector_int3_sized.hpp \
+  C:/glm/glm/ext/vector_uint3.hpp \
+  C:/glm/glm/ext/vector_uint3_sized.hpp \
+  C:/glm/glm/vec4.hpp \
+  C:/glm/glm/ext/vector_bool4.hpp \
+  C:/glm/glm/ext/vector_bool4_precision.hpp \
+  C:/glm/glm/ext/vector_float4.hpp \
+  C:/glm/glm/ext/vector_float4_precision.hpp \
+  C:/glm/glm/ext/vector_double4.hpp \
+  C:/glm/glm/ext/vector_double4_precision.hpp \
+  C:/glm/glm/ext/vector_int4.hpp \
+  C:/glm/glm/ext/vector_int4_sized.hpp \
+  C:/glm/glm/ext/vector_uint4.hpp \
+  C:/glm/glm/ext/vector_uint4_sized.hpp \
+  C:/glm/glm/mat2x2.hpp \
+  C:/glm/glm/ext/matrix_double2x2.hpp \
+  C:/glm/glm/detail/type_mat2x2.hpp \
+  C:/glm/glm/detail/type_mat2x2.inl \
+  C:/glm/glm/ext/matrix_double2x2_precision.hpp \
+  C:/glm/glm/ext/matrix_float2x2.hpp \
+  C:/glm/glm/ext/matrix_float2x2_precision.hpp \
+  C:/glm/glm/mat2x3.hpp \
+  C:/glm/glm/ext/matrix_double2x3.hpp \
+  C:/glm/glm/detail/type_mat2x3.hpp \
+  C:/glm/glm/detail/type_mat2x3.inl \
+  C:/glm/glm/ext/matrix_double2x3_precision.hpp \
+  C:/glm/glm/ext/matrix_float2x3.hpp \
+  C:/glm/glm/ext/matrix_float2x3_precision.hpp \
+  C:/glm/glm/mat2x4.hpp \
+  C:/glm/glm/ext/matrix_double2x4.hpp \
+  C:/glm/glm/detail/type_mat2x4.hpp \
+  C:/glm/glm/detail/type_mat2x4.inl \
+  C:/glm/glm/ext/matrix_double2x4_precision.hpp \
+  C:/glm/glm/ext/matrix_float2x4.hpp \
+  C:/glm/glm/ext/matrix_float2x4_precision.hpp \
+  C:/glm/glm/mat3x2.hpp \
+  C:/glm/glm/ext/matrix_double3x2.hpp \
+  C:/glm/glm/detail/type_mat3x2.hpp \
+  C:/glm/glm/detail/type_mat3x2.inl \
+  C:/glm/glm/ext/matrix_double3x2_precision.hpp \
+  C:/glm/glm/ext/matrix_float3x2.hpp \
+  C:/glm/glm/ext/matrix_float3x2_precision.hpp \
+  C:/glm/glm/mat3x3.hpp \
+  C:/glm/glm/ext/matrix_double3x3.hpp \
+  C:/glm/glm/detail/type_mat3x3.hpp \
+  C:/glm/glm/detail/type_mat3x3.inl \
+  C:/glm/glm/ext/matrix_double3x3_precision.hpp \
+  C:/glm/glm/ext/matrix_float3x3.hpp \
+  C:/glm/glm/ext/matrix_float3x3_precision.hpp \
+  C:/glm/glm/mat3x4.hpp \
+  C:/glm/glm/ext/matrix_double3x4.hpp \
+  C:/glm/glm/detail/type_mat3x4.hpp \
+  C:/glm/glm/detail/type_mat3x4.inl \
+  C:/glm/glm/ext/matrix_double3x4_precision.hpp \
+  C:/glm/glm/ext/matrix_float3x4.hpp \
+  C:/glm/glm/ext/matrix_float3x4_precision.hpp \
+  C:/glm/glm/mat4x2.hpp \
+  C:/glm/glm/ext/matrix_double4x2.hpp \
+  C:/glm/glm/detail/type_mat4x2.hpp \
+  C:/glm/glm/detail/type_mat4x2.inl \
+  C:/glm/glm/ext/matrix_double4x2_precision.hpp \
+  C:/glm/glm/ext/matrix_float4x2.hpp \
+  C:/glm/glm/ext/matrix_float4x2_precision.hpp \
+  C:/glm/glm/mat4x3.hpp \
+  C:/glm/glm/ext/matrix_double4x3.hpp \
+  C:/glm/glm/detail/type_mat4x3.hpp \
+  C:/glm/glm/detail/type_mat4x3.inl \
+  C:/glm/glm/ext/matrix_double4x3_precision.hpp \
+  C:/glm/glm/ext/matrix_float4x3.hpp \
+  C:/glm/glm/ext/matrix_float4x3_precision.hpp \
+  C:/glm/glm/detail/func_matrix.inl \
+  C:/glm/glm/geometric.hpp \
+  C:/glm/glm/detail/func_geometric.inl \
+  C:/glm/glm/exponential.hpp \
+  C:/glm/glm/detail/type_vec1.hpp \
+  C:/glm/glm/detail/type_vec1.inl \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/cmath \
+  C:/MinGW/include/math.h \
+  C:/glm/glm/detail/func_exponential.inl \
+  C:/glm/glm/vector_relational.hpp \
+  C:/glm/glm/detail/func_vector_relational.inl \
+  C:/glm/glm/detail/_vectorize.hpp \
+  C:/glm/glm/common.hpp \
+  C:/glm/glm/detail/_fixes.hpp \
+  C:/glm/glm/detail/func_common.inl \
+  C:/glm/glm/detail/compute_common.hpp \
+  C:/glm/glm/detail/setup.hpp \
+  C:/glm/glm/ext/matrix_double4x4_precision.hpp \
+  C:/glm/glm/ext/matrix_float4x4.hpp \
+  C:/glm/glm/ext/matrix_float4x4_precision.hpp \
+  C:/glm/glm/ext/matrix_projection.hpp \
+  C:/glm/glm/gtc/constants.hpp \
+  C:/glm/glm/ext/scalar_constants.hpp \
+  C:/glm/glm/ext/scalar_constants.inl \
+  C:/glm/glm/gtc/constants.inl \
+  C:/glm/glm/trigonometric.hpp \
+  C:/glm/glm/detail/func_trigonometric.inl \
+  C:/glm/glm/ext/matrix_projection.inl \
+  C:/glm/glm/ext/matrix_clip_space.hpp \
+  C:/glm/glm/ext/matrix_clip_space.inl \
+  C:/glm/glm/ext/matrix_transform.hpp \
+  C:/glm/glm/ext/matrix_transform.inl \
+  C:/glm/glm/gtc/matrix_transform.inl \
+  C:/glm/glm/gtx/transform.hpp \
+  C:/glm/glm/glm.hpp \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/climits \
+  C:/MinGW/include/limits.h \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/cfloat \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/float.h \
+  C:/MinGW/include/float.h \
+  C:/glm/glm/fwd.hpp \
+  C:/glm/glm/packing.hpp \
+  C:/glm/glm/detail/func_packing.inl \
+  C:/glm/glm/detail/type_half.hpp \
+  C:/glm/glm/detail/type_half.inl \
+  C:/glm/glm/integer.hpp \
+  C:/glm/glm/detail/func_integer.inl \
+  C:/glm/glm/gtx/transform.inl \
+  C:/glm/glm/gtx/quaternion.hpp \
+  C:/glm/glm/gtc/quaternion.hpp \
+  C:/glm/glm/ext/vector_relational.hpp \
+  C:/glm/glm/ext/vector_relational.inl \
+  C:/glm/glm/detail/type_float.hpp \
+  C:/glm/glm/ext/quaternion_common.hpp \
+  C:/glm/glm/ext/quaternion_geometric.hpp \
+  C:/glm/glm/ext/quaternion_geometric.inl \
+  C:/glm/glm/ext/quaternion_common.inl \
+  C:/glm/glm/ext/quaternion_float.hpp \
+  C:/glm/glm/detail/type_quat.hpp \
+  C:/glm/glm/ext/quaternion_relational.hpp \
+  C:/glm/glm/ext/quaternion_relational.inl \
+  C:/glm/glm/detail/type_quat.inl \
+  C:/glm/glm/ext/quaternion_float_precision.hpp \
+  C:/glm/glm/ext/quaternion_double.hpp \
+  C:/glm/glm/ext/quaternion_double_precision.hpp \
+  C:/glm/glm/ext/quaternion_trigonometric.hpp \
+  C:/glm/glm/ext/quaternion_trigonometric.inl \
+  C:/glm/glm/ext/quaternion_transform.hpp \
+  C:/glm/glm/ext/quaternion_transform.inl \
+  C:/glm/glm/gtc/quaternion.inl \
+  C:/glm/glm/gtc/epsilon.hpp \
+  C:/glm/glm/detail/setup.hpp \
+  C:/glm/glm/gtc/epsilon.inl \
+  C:/glm/glm/ext/quaternion_exponential.hpp \
+  C:/glm/glm/ext/quaternion_exponential.inl \
+  C:/glm/glm/gtx/norm.hpp \
+  C:/glm/glm/gtx/component_wise.hpp \
+  C:/glm/glm/detail/setup.hpp \
+  C:/glm/glm/gtx/component_wise.inl \
+  C:/glm/glm/gtx/norm.inl \
+  C:/glm/glm/gtx/quaternion.inl \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/iostream \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/ostream \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/ios \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/iosfwd \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/stringfwd.h \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/postypes.h \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/cwchar \
+  C:/MinGW/include/wchar.h \
+  C:/MinGW/include/wctype.h \
+  C:/MinGW/include/sys/types.h \
+  C:/MinGW/include/stdio.h \
+  C:/MinGW/include/sys/types.h \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/stdarg.h \
+  C:/MinGW/include/stdlib.h \
+  C:/MinGW/include/direct.h \
+  C:/MinGW/include/sys/stat.h \
+  C:/MinGW/include/io.h \
+  C:/MinGW/include/stdint.h \
+  C:/MinGW/include/time.h \
+  C:/MinGW/include/locale.h \
+  C:/MinGW/include/process.h \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/char_traits.h \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/localefwd.h \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/mingw32/bits/c++locale.h \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/clocale \
+  C:/MinGW/include/locale.h \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/cctype \
+  C:/MinGW/include/ctype.h \
+  C:/MinGW/include/wctype.h \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/ios_base.h \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/ext/atomicity.h \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/mingw32/bits/gthr.h \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/mingw32/bits/gthr-default.h \
+  C:/MinGW/include/errno.h \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/mingw32/bits/atomic_word.h \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/locale_classes.h \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/string \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/ostream_insert.h \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/cxxabi_forced.h \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/stl_function.h \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/backward/binders.h \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/basic_string.h \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/ext/string_conversions.h \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/cstdlib \
+  C:/MinGW/include/stdlib.h \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/cstdio \
+  C:/MinGW/include/stdio.h \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/cerrno \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/basic_string.tcc \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/locale_classes.tcc \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/system_error \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/mingw32/bits/error_constants.h \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/stdexcept \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/streambuf \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/streambuf.tcc \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/basic_ios.h \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/locale_facets.h \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/cwctype \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/mingw32/bits/ctype_base.h \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/streambuf_iterator.h \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/mingw32/bits/ctype_inline.h \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/locale_facets.tcc \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/basic_ios.tcc \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/ostream.tcc \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/istream \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/istream.tcc \
+  ../src/tools/utility.hpp \
+  ../src/tools/GLShader.hpp \
+  C:/SFML-2.5.1/include/SFML/OpenGL.hpp \
+  C:/SFML-2.5.1/include/SFML/Config.hpp \
+  C:/SFML-2.5.1/include/SFML/Graphics.hpp \
+  C:/SFML-2.5.1/include/SFML/Window.hpp \
+  C:/SFML-2.5.1/include/SFML/System.hpp \
+  C:/SFML-2.5.1/include/SFML/System/Clock.hpp \
+  C:/SFML-2.5.1/include/SFML/System/Export.hpp \
+  C:/SFML-2.5.1/include/SFML/System/Time.hpp \
+  C:/SFML-2.5.1/include/SFML/System/Err.hpp \
   C:/SFML-2.5.1/include/SFML/System/FileInputStream.hpp \
   C:/SFML-2.5.1/include/SFML/System/InputStream.hpp \
   C:/SFML-2.5.1/include/SFML/System/NonCopyable.hpp \
@@ -354,8 +1103,6 @@ CMakeFiles/Game.dir/src/entities.cpp.obj: ../src/entities.cpp \
   C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/uses_allocator.h \
   C:/SFML-2.5.1/include/SFML/System/Utf.inl \
   C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/iterator \
-  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/istream \
-  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/istream.tcc \
   C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/stream_iterator.h \
   C:/SFML-2.5.1/include/SFML/System/String.inl \
   C:/SFML-2.5.1/include/SFML/System/Thread.hpp \
@@ -417,11 +1164,7 @@ CMakeFiles/Game.dir/src/entities.cpp.obj: ../src/entities.cpp \
   C:/SFML-2.5.1/include/SFML/Graphics/Glsl.inl \
   C:/SFML-2.5.1/include/SFML/Graphics/Sprite.hpp \
   C:/SFML-2.5.1/include/SFML/Graphics/Text.hpp \
-  C:/SFML-2.5.1/include/SFML/Graphics/VertexBuffer.hpp \
-  C:/glm/glm/gtx/transform.hpp \
-  C:/glm/glm/gtx/transform.inl \
-  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/iostream \
-  ../src/tools/utility.hpp
+  C:/SFML-2.5.1/include/SFML/Graphics/VertexBuffer.hpp
 
 CMakeFiles/Game.dir/src/main.cpp.obj: ../src/main.cpp \
   C:/glew-2.1.0/include/GL/glew.h \
@@ -801,7 +1544,7 @@ CMakeFiles/Game.dir/src/main.cpp.obj: ../src/main.cpp \
   C:/MinGW/include/wchar.h \
   C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/iostream \
   ../src/entities.hpp \
-  C:/glm/glm/gtx/quaternion.hpp \
+  C:/glm/glm/gtx/transform.hpp \
   C:/glm/glm/glm.hpp \
   C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/climits \
   C:/MinGW/include/limits.h \
@@ -815,6 +1558,8 @@ CMakeFiles/Game.dir/src/main.cpp.obj: ../src/main.cpp \
   C:/glm/glm/detail/type_half.inl \
   C:/glm/glm/integer.hpp \
   C:/glm/glm/detail/func_integer.inl \
+  C:/glm/glm/gtx/transform.inl \
+  C:/glm/glm/gtx/quaternion.hpp \
   C:/glm/glm/gtc/quaternion.hpp \
   C:/glm/glm/ext/vector_relational.hpp \
   C:/glm/glm/ext/vector_relational.inl \
@@ -847,7 +1592,10 @@ CMakeFiles/Game.dir/src/main.cpp.obj: ../src/main.cpp \
   C:/glm/glm/gtx/component_wise.inl \
   C:/glm/glm/gtx/norm.inl \
   C:/glm/glm/gtx/quaternion.inl \
-  ../src/tools/utility.hpp
+  ../src/tools/utility.hpp \
+  ../src/gl.hpp \
+  ../src/tools/GLShader.hpp \
+  ../src/game.hpp
 
 CMakeFiles/Game.dir/src/tools/utility.cpp.obj: ../src/tools/utility.cpp \
   C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/iostream \
@@ -1090,7 +1838,11 @@ CMakeFiles/Game.dir/src/tools/utility.cpp.obj: ../src/tools/utility.cpp \
   C:/glm/glm/detail/setup.hpp \
   C:/glm/glm/ext/matrix_double4x4_precision.hpp \
   C:/glm/glm/ext/matrix_float4x4.hpp \
-  C:/glm/glm/ext/matrix_float4x4_precision.hpp
+  C:/glm/glm/ext/matrix_float4x4_precision.hpp \
+  C:/glew-2.1.0/include/GL/glew.h \
+  C:/MinGW/include/inttypes.h \
+  C:/MinGW/include/GL/glu.h \
+  C:/MinGW/include/GL/gl.h
 
 
 ../src/tools/utility.hpp:
@@ -1101,9 +1853,9 @@ C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/cstddef:
 
 C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/vector:
 
-C:/MinGW/include/GL/gl.h:
-
 C:/glm/glm/simd/platform.h:
+
+C:/MinGW/include/GL/gl.h:
 
 C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/basic_ios.tcc:
 
@@ -1116,6 +1868,8 @@ C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/debug/debug.h:
 C:/SFML-2.5.1/include/SFML/System/Time.hpp:
 
 ../src/entities.hpp:
+
+C:/glm/glm/detail/type_vec4.hpp:
 
 C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/ext/string_conversions.h:
 
@@ -1205,8 +1959,6 @@ C:/MinGW/include/assert.h:
 
 C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/allocator.h:
 
-C:/glm/glm/ext/vector_bool3.hpp:
-
 C:/MinGW/include/wchar.h:
 
 C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/mingw32/bits/c++allocator.h:
@@ -1217,9 +1969,11 @@ C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/ext/new_allocator.h:
 
 C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/new:
 
-C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/atomic_lockfree_defines.h:
+C:/glm/glm/ext/matrix_double4x4.hpp:
 
-C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/cstdint:
+C:/glm/glm/detail/type_mat4x4.hpp:
+
+C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/atomic_lockfree_defines.h:
 
 C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/memoryfwd.h:
 
@@ -1267,6 +2021,8 @@ C:/glew-2.1.0/include/GL/glew.h:
 
 C:/MinGW/include/_mingw.h:
 
+C:/glm/glm/mat4x4.hpp:
+
 C:/MinGW/include/msvcrtver.h:
 
 C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/mingw32/bits/ctype_base.h:
@@ -1283,25 +2039,25 @@ C:/MinGW/include/sdkddkver.h:
 
 C:/MinGW/include/GL/glu.h:
 
-C:/glm/glm/vec3.hpp:
+C:/SFML-2.5.1/include/SFML/Graphics/RenderTexture.hpp:
 
-C:/SFML-2.5.1/include/SFML/Graphics/ConvexShape.hpp:
+C:/glm/glm/detail/setup.hpp:
 
-C:/SFML-2.5.1/include/SFML/Graphics/Vertex.hpp:
+C:/glm/glm/ext/quaternion_transform.hpp:
 
-C:/glm/glm/detail/type_vec3.hpp:
+C:/glm/glm/gtc/matrix_transform.hpp:
 
 C:/MinGW/include/sys/stat.h:
 
 C:/glm/glm/detail/qualifier.hpp:
 
-C:/SFML-2.5.1/include/SFML/Graphics/RenderTexture.hpp:
-
-C:/glm/glm/detail/setup.hpp:
-
 C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/cassert:
 
-C:/glm/glm/detail/type_vec3.inl:
+C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/cstdint:
+
+C:/glm/glm/gtx/transform.hpp:
+
+C:/glm/glm/detail/type_vec4.inl:
 
 C:/glm/glm/detail/compute_vector_relational.hpp:
 
@@ -1309,75 +2065,17 @@ C:/SFML-2.5.1/include/SFML/Graphics/BlendMode.hpp:
 
 C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/limits:
 
-C:/glm/glm/ext/vector_bool3_precision.hpp:
+C:/glm/glm/detail/type_mat4x3.hpp:
 
-C:/glm/glm/ext/vector_float3.hpp:
+C:/glm/glm/ext/matrix_double4x3.hpp:
 
-C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/cstdio:
+C:/glm/glm/ext/matrix_float3x4_precision.hpp:
 
-C:/glm/glm/detail/func_integer.inl:
+C:/glm/glm/detail/type_mat4x4.inl:
 
-C:/glm/glm/ext/vector_double3.hpp:
+C:/glm/glm/common.hpp:
 
-C:/glm/glm/ext/vector_double3_precision.hpp:
-
-C:/glm/glm/ext/vector_int3.hpp:
-
-C:/glm/glm/ext/vector_int3_sized.hpp:
-
-C:/glm/glm/ext/scalar_int_sized.hpp:
-
-C:/glm/glm/ext/quaternion_float.hpp:
-
-C:/glm/glm/ext/vector_uint3.hpp:
-
-C:/glm/glm/ext/vector_uint3_sized.hpp:
-
-C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/ext/atomicity.h:
-
-C:/glm/glm/ext/scalar_uint_sized.hpp:
-
-C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/locale:
-
-C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/streambuf.tcc:
-
-C:/glm/glm/gtx/quaternion.hpp:
-
-C:/glm/glm/glm.hpp:
-
-C:/glm/glm/detail/_fixes.hpp:
-
-C:/SFML-2.5.1/include/SFML/System/Lock.hpp:
-
-C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/cmath:
-
-C:/glm/glm/mat4x2.hpp:
-
-C:/MinGW/include/math.h:
-
-C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/cstdlib:
-
-C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/ios:
-
-C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/climits:
-
-C:/SFML-2.5.1/include/SFML/System/FileInputStream.hpp:
-
-C:/MinGW/include/limits.h:
-
-C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/cfloat:
-
-C:/glm/glm/ext/matrix_transform.hpp:
-
-C:/MinGW/lib/gcc/mingw32/6.3.0/include/float.h:
-
-C:/glm/glm/gtc/epsilon.inl:
-
-C:/MinGW/include/float.h:
-
-C:/SFML-2.5.1/include/SFML/Window/WindowHandle.hpp:
-
-C:/glm/glm/fwd.hpp:
+C:/glm/glm/matrix.hpp:
 
 C:/glm/glm/vec2.hpp:
 
@@ -1409,11 +2107,51 @@ C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/cerrno:
 
 C:/glm/glm/ext/vector_int2_sized.hpp:
 
+C:/glm/glm/ext/scalar_int_sized.hpp:
+
 C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/mingw32/bits/ctype_inline.h:
 
 C:/glm/glm/ext/vector_uint2.hpp:
 
 C:/glm/glm/ext/vector_uint2_sized.hpp:
+
+C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/ext/atomicity.h:
+
+C:/glm/glm/ext/scalar_uint_sized.hpp:
+
+C:/glm/glm/vec3.hpp:
+
+C:/glm/glm/ext/vector_bool3.hpp:
+
+C:/SFML-2.5.1/include/SFML/Graphics/ConvexShape.hpp:
+
+C:/SFML-2.5.1/include/SFML/Graphics/Vertex.hpp:
+
+C:/glm/glm/detail/type_vec3.hpp:
+
+C:/glm/glm/detail/type_vec3.inl:
+
+C:/glm/glm/ext/vector_bool3_precision.hpp:
+
+C:/glm/glm/ext/vector_float3.hpp:
+
+C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/cstdio:
+
+C:/glm/glm/detail/func_integer.inl:
+
+C:/glm/glm/ext/vector_double3.hpp:
+
+C:/glm/glm/ext/vector_double3_precision.hpp:
+
+C:/glm/glm/ext/vector_int3.hpp:
+
+C:/glm/glm/ext/vector_int3_sized.hpp:
+
+C:/glm/glm/ext/quaternion_float.hpp:
+
+C:/glm/glm/ext/vector_uint3.hpp:
+
+C:/glm/glm/ext/vector_uint3_sized.hpp:
 
 C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/cctype:
 
@@ -1422,12 +2160,6 @@ C:/glm/glm/vec4.hpp:
 C:/glm/glm/ext/matrix_double4x2_precision.hpp:
 
 C:/glm/glm/ext/vector_bool4.hpp:
-
-C:/glm/glm/detail/type_vec4.hpp:
-
-C:/glm/glm/gtx/transform.hpp:
-
-C:/glm/glm/detail/type_vec4.inl:
 
 C:/SFML-2.5.1/include/SFML/Graphics/Font.hpp:
 
@@ -1469,9 +2201,11 @@ C:/glm/glm/detail/type_mat2x2.hpp:
 
 C:/glm/glm/ext/matrix_double2x2.hpp:
 
-C:/glm/glm/common.hpp:
+C:/glm/glm/ext/matrix_double2x2_precision.hpp:
 
-C:/glm/glm/matrix.hpp:
+C:/glm/glm/ext/matrix_float2x2.hpp:
+
+C:/glm/glm/ext/matrix_float2x2_precision.hpp:
 
 C:/glm/glm/mat2x3.hpp:
 
@@ -1547,13 +2281,9 @@ C:/glm/glm/detail/func_exponential.inl:
 
 C:/glm/glm/ext/matrix_float3x4.hpp:
 
-C:/glm/glm/detail/type_mat4x4.inl:
+C:/MinGW/include/math.h:
 
-C:/glm/glm/detail/type_mat4x3.hpp:
-
-C:/glm/glm/ext/matrix_double4x3.hpp:
-
-C:/glm/glm/ext/matrix_float3x4_precision.hpp:
+C:/glm/glm/mat4x2.hpp:
 
 C:/glm/glm/detail/type_mat4x2.hpp:
 
@@ -1577,20 +2307,6 @@ C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/system_error:
 
 C:/glm/glm/ext/matrix_float4x3_precision.hpp:
 
-C:/glm/glm/mat4x4.hpp:
-
-C:/glm/glm/detail/type_mat4x4.hpp:
-
-C:/glm/glm/ext/matrix_double4x4.hpp:
-
-C:/SFML-2.5.1/include/SFML/Window/GlResource.hpp:
-
-C:/glm/glm/ext/matrix_double4x4_precision.hpp:
-
-C:/glm/glm/ext/matrix_float4x4.hpp:
-
-C:/glm/glm/ext/matrix_float4x4_precision.hpp:
-
 C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/basic_ios.h:
 
 C:/glm/glm/gtx/norm.inl:
@@ -1607,11 +2323,17 @@ C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/algorithmfwd.h:
 
 C:/glm/glm/detail/type_vec1.inl:
 
+C:/SFML-2.5.1/include/SFML/System/Lock.hpp:
+
+C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/cmath:
+
 C:/glm/glm/vector_relational.hpp:
 
 C:/glm/glm/detail/func_vector_relational.inl:
 
 C:/glm/glm/detail/_vectorize.hpp:
+
+C:/glm/glm/detail/_fixes.hpp:
 
 C:/SFML-2.5.1/include/SFML/Graphics/PrimitiveType.hpp:
 
@@ -1623,21 +2345,17 @@ C:/SFML-2.5.1/include/SFML/System/ThreadLocal.hpp:
 
 C:/glm/glm/detail/compute_common.hpp:
 
-C:/glm/glm/ext/matrix_double2x2_precision.hpp:
+../src/gl.cpp:
 
-C:/glm/glm/ext/matrix_float2x2.hpp:
+C:/SFML-2.5.1/include/SFML/Window/GlResource.hpp:
 
-C:/glm/glm/ext/matrix_float2x2_precision.hpp:
+C:/glm/glm/ext/matrix_double4x4_precision.hpp:
 
-C:/glm/glm/trigonometric.hpp:
+C:/glm/glm/ext/matrix_float4x4.hpp:
 
-C:/glm/glm/detail/func_trigonometric.inl:
+C:/glm/glm/ext/matrix_float4x4_precision.hpp:
 
-C:/glm/glm/packing.hpp:
-
-C:/glm/glm/detail/type_half.hpp:
-
-C:/glm/glm/integer.hpp:
+C:/glm/glm/ext/matrix_projection.hpp:
 
 C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/locale_facets_nonio.tcc:
 
@@ -1645,17 +2363,21 @@ C:/glm/glm/gtc/constants.hpp:
 
 C:/glm/glm/ext/scalar_constants.hpp:
 
-C:/glm/glm/ext/quaternion_transform.hpp:
+../src/game.hpp:
 
-C:/glm/glm/gtc/matrix_transform.hpp:
+C:/glm/glm/trigonometric.hpp:
 
-C:/glm/glm/ext/matrix_projection.hpp:
+C:/glm/glm/detail/func_trigonometric.inl:
 
 C:/glm/glm/ext/matrix_projection.inl:
 
 C:/glm/glm/ext/matrix_clip_space.hpp:
 
 C:/glm/glm/ext/matrix_clip_space.inl:
+
+C:/MinGW/lib/gcc/mingw32/6.3.0/include/float.h:
+
+C:/glm/glm/ext/matrix_transform.hpp:
 
 C:/SFML-2.5.1/include/SFML/Window/Joystick.hpp:
 
@@ -1664,6 +2386,44 @@ C:/glm/glm/ext/matrix_transform.inl:
 C:/glm/glm/ext/quaternion_transform.inl:
 
 C:/glm/glm/gtc/matrix_transform.inl:
+
+C:/glm/glm/glm.hpp:
+
+C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/cstdlib:
+
+C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/ios:
+
+C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/climits:
+
+C:/SFML-2.5.1/include/SFML/System/FileInputStream.hpp:
+
+C:/MinGW/include/limits.h:
+
+C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/cfloat:
+
+C:/glm/glm/gtc/epsilon.inl:
+
+C:/MinGW/include/float.h:
+
+C:/SFML-2.5.1/include/SFML/Window/WindowHandle.hpp:
+
+C:/glm/glm/fwd.hpp:
+
+C:/glm/glm/packing.hpp:
+
+C:/glm/glm/detail/type_half.hpp:
+
+C:/glm/glm/integer.hpp:
+
+C:/SFML-2.5.1/include/SFML/Graphics/Text.hpp:
+
+C:/glm/glm/gtx/transform.inl:
+
+C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/locale:
+
+C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/streambuf.tcc:
+
+C:/glm/glm/gtx/quaternion.hpp:
 
 C:/glm/glm/ext/vector_relational.hpp:
 
@@ -1703,9 +2463,9 @@ C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/cwchar:
 
 C:/glm/glm/ext/quaternion_float_precision.hpp:
 
-C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/postypes.h:
-
 C:/SFML-2.5.1/include/SFML/System/Clock.hpp:
+
+C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/postypes.h:
 
 C:/glm/glm/ext/quaternion_double.hpp:
 
@@ -1723,17 +2483,15 @@ C:/glm/glm/gtx/component_wise.inl:
 
 C:/glm/glm/gtx/quaternion.inl:
 
-C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/stringfwd.h:
-
-C:/SFML-2.5.1/include/SFML/Graphics.hpp:
-
-C:/SFML-2.5.1/include/SFML/Config.hpp:
-
-C:/SFML-2.5.1/include/SFML/System/Err.hpp:
+C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/iostream:
 
 C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/ostream:
 
 C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/iosfwd:
+
+C:/SFML-2.5.1/include/SFML/Graphics.hpp:
+
+C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/stringfwd.h:
 
 C:/SFML-2.5.1/include/SFML/System/ThreadLocalPtr.inl:
 
@@ -1793,6 +2551,14 @@ C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/streambuf_iterator.h:
 
 C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/ostream.tcc:
 
+C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/istream.tcc:
+
+../src/game.cpp:
+
+C:/SFML-2.5.1/include/SFML/Config.hpp:
+
+C:/SFML-2.5.1/include/SFML/System/Err.hpp:
+
 C:/SFML-2.5.1/include/SFML/System/InputStream.hpp:
 
 C:/SFML-2.5.1/include/SFML/System/NonCopyable.hpp:
@@ -1830,8 +2596,6 @@ C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/array:
 C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/uses_allocator.h:
 
 C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/iterator:
-
-C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/istream.tcc:
 
 C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/stream_iterator.h:
 
@@ -1905,13 +2669,9 @@ C:/SFML-2.5.1/include/SFML/Graphics/Glsl.inl:
 
 C:/SFML-2.5.1/include/SFML/Graphics/Sprite.hpp:
 
-C:/glm/glm/gtx/transform.inl:
-
-C:/SFML-2.5.1/include/SFML/Graphics/Text.hpp:
-
 C:/SFML-2.5.1/include/SFML/Graphics/VertexBuffer.hpp:
 
-C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/iostream:
+../src/gl.hpp:
 
 ../src/tools/GLShader.hpp:
 

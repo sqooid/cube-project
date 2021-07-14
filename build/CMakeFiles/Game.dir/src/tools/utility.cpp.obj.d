@@ -190,4 +190,6 @@ CMakeFiles/Game.dir/src/tools/utility.cpp.obj: \
  c:\glm\glm\detail/compute_common.hpp c:\glm\glm\detail/setup.hpp \
  c:\glm\glm\ext\matrix_double4x4_precision.hpp \
  c:\glm\glm\ext\matrix_float4x4.hpp \
- c:\glm\glm\ext\matrix_float4x4_precision.hpp
+ c:\glm\glm\ext\matrix_float4x4_precision.hpp \
+ C:/glew-2.1.0/include/GL/glew.h c:\mingw\include\inttypes.h \
+ c:\mingw\include\gl\glu.h c:\mingw\include\gl\gl.h

@@ -1,19 +1,13 @@
 #include "entities.hpp"
-#include <glm/gtc/matrix_transform.hpp>
-#include <glm/gtx/transform.hpp>
-#include <glm/gtx/quaternion.hpp>
-#include <iostream>
-#include "tools/utility.hpp"
 
 /**
  * Game state object definitions
  */
-State::State(Player::Player &player, Control &control)
+State::State(Player::Player &player, Control &control, Floor::Floor &floor) : cubeList{}
 {
 	this->player = player;
+	this->floor = floor;
 	this->control = control;
-	std::vector<Cube::Cube *> cubeVector;
-	this->cubeList = cubeVector;
 }
 
 void State::addEntity(Cube::Cube &entity)
@@ -89,4 +83,51 @@ glm::mat4 Cube::Cube::genModelMatrix()
 	glm::mat4 scaleMatrix = glm::scale(glm::mat4(1.0f), glm::vec3(size));
 
 	return translationMatrix * rotationMatrix * scaleMatrix;
+}
+
+/**
+ * @brief Construct a new Floor:: Floor:: Floor object
+ * 
+ * @param spacing Space between lines
+ * @param renderDistance Must be a multiple of spacing
+ * @param floorHeight y height of floor
+ */
+Floor::Floor::Floor(float spacing, float renderDistance, float floorHeight) : spacing{spacing}
+{
+	vertices.reserve((int)24 * renderDistance / spacing);
+	std::cout << "vertexArray: " << vertices.capacity() << "\n";
+	for (int i = 0; i < renderDistance / spacing; i++)
+	{
+		vertices.push_back(spacing / 2.0f + i * spacing);
+		vertices.push_back(floorHeight);
+		vertices.push_back(-renderDistance);
+
+		vertices.push_back(spacing / 2.0f + i * spacing);
+		vertices.push_back(floorHeight);
+		vertices.push_back(renderDistance);
+
+		vertices.push_back(-spacing / 2.0f - i * spacing);
+		vertices.push_back(floorHeight);
+		vertices.push_back(-renderDistance);
+
+		vertices.push_back(-spacing / 2.0f - i * spacing);
+		vertices.push_back(floorHeight);
+		vertices.push_back(renderDistance);
+
+		vertices.push_back(-renderDistance);
+		vertices.push_back(floorHeight);
+		vertices.push_back(spacing / 2.0f + i * spacing);
+
+		vertices.push_back(renderDistance);
+		vertices.push_back(floorHeight);
+		vertices.push_back(spacing / 2.0f + i * spacing);
+
+		vertices.push_back(-renderDistance);
+		vertices.push_back(floorHeight);
+		vertices.push_back(-spacing / 2.0f - i * spacing);
+
+		vertices.push_back(renderDistance);
+		vertices.push_back(floorHeight);
+		vertices.push_back(-spacing / 2.0f - i * spacing);
+	}
 }

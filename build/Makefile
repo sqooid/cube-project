@@ -165,6 +165,54 @@ src/entities.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Game.dir\build.make CMakeFiles/Game.dir/src/entities.cpp.s
 .PHONY : src/entities.cpp.s
 
+src/game.obj: src/game.cpp.obj
+.PHONY : src/game.obj
+
+# target to build an object file
+src/game.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Game.dir\build.make CMakeFiles/Game.dir/src/game.cpp.obj
+.PHONY : src/game.cpp.obj
+
+src/game.i: src/game.cpp.i
+.PHONY : src/game.i
+
+# target to preprocess a source file
+src/game.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Game.dir\build.make CMakeFiles/Game.dir/src/game.cpp.i
+.PHONY : src/game.cpp.i
+
+src/game.s: src/game.cpp.s
+.PHONY : src/game.s
+
+# target to generate assembly for a file
+src/game.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Game.dir\build.make CMakeFiles/Game.dir/src/game.cpp.s
+.PHONY : src/game.cpp.s
+
+src/gl.obj: src/gl.cpp.obj
+.PHONY : src/gl.obj
+
+# target to build an object file
+src/gl.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Game.dir\build.make CMakeFiles/Game.dir/src/gl.cpp.obj
+.PHONY : src/gl.cpp.obj
+
+src/gl.i: src/gl.cpp.i
+.PHONY : src/gl.i
+
+# target to preprocess a source file
+src/gl.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Game.dir\build.make CMakeFiles/Game.dir/src/gl.cpp.i
+.PHONY : src/gl.cpp.i
+
+src/gl.s: src/gl.cpp.s
+.PHONY : src/gl.s
+
+# target to generate assembly for a file
+src/gl.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Game.dir\build.make CMakeFiles/Game.dir/src/gl.cpp.s
+.PHONY : src/gl.cpp.s
+
 src/main.obj: src/main.cpp.obj
 .PHONY : src/main.obj
 
@@ -250,6 +298,12 @@ help:
 	@echo ... src/entities.obj
 	@echo ... src/entities.i
 	@echo ... src/entities.s
+	@echo ... src/game.obj
+	@echo ... src/game.i
+	@echo ... src/game.s
+	@echo ... src/gl.obj
+	@echo ... src/gl.i
+	@echo ... src/gl.s
 	@echo ... src/main.obj
 	@echo ... src/main.i
 	@echo ... src/main.s

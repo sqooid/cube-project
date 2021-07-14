@@ -1,6 +1,10 @@
 file(REMOVE_RECURSE
   "CMakeFiles/Game.dir/src/entities.cpp.obj"
   "CMakeFiles/Game.dir/src/entities.cpp.obj.d"
+  "CMakeFiles/Game.dir/src/game.cpp.obj"
+  "CMakeFiles/Game.dir/src/game.cpp.obj.d"
+  "CMakeFiles/Game.dir/src/gl.cpp.obj"
+  "CMakeFiles/Game.dir/src/gl.cpp.obj.d"
   "CMakeFiles/Game.dir/src/main.cpp.obj"
   "CMakeFiles/Game.dir/src/main.cpp.obj.d"
   "CMakeFiles/Game.dir/src/tools/utility.cpp.obj"

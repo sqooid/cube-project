@@ -113,11 +113,43 @@ CMakeFiles/Game.dir/src/tools/utility.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Game.dir/src/tools/utility.cpp.s"
 	C:\MinGW\bin\mingw32-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Lucas\Documents\sfml-projects\cube-project\src\tools\utility.cpp -o CMakeFiles\Game.dir\src\tools\utility.cpp.s
 
+CMakeFiles/Game.dir/src/gl.cpp.obj: CMakeFiles/Game.dir/flags.make
+CMakeFiles/Game.dir/src/gl.cpp.obj: CMakeFiles/Game.dir/includes_CXX.rsp
+CMakeFiles/Game.dir/src/gl.cpp.obj: ../src/gl.cpp
+CMakeFiles/Game.dir/src/gl.cpp.obj: CMakeFiles/Game.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Lucas\Documents\sfml-projects\cube-project\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Game.dir/src/gl.cpp.obj"
+	C:\MinGW\bin\mingw32-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Game.dir/src/gl.cpp.obj -MF CMakeFiles\Game.dir\src\gl.cpp.obj.d -o CMakeFiles\Game.dir\src\gl.cpp.obj -c C:\Users\Lucas\Documents\sfml-projects\cube-project\src\gl.cpp
+
+CMakeFiles/Game.dir/src/gl.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Game.dir/src/gl.cpp.i"
+	C:\MinGW\bin\mingw32-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Lucas\Documents\sfml-projects\cube-project\src\gl.cpp > CMakeFiles\Game.dir\src\gl.cpp.i
+
+CMakeFiles/Game.dir/src/gl.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Game.dir/src/gl.cpp.s"
+	C:\MinGW\bin\mingw32-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Lucas\Documents\sfml-projects\cube-project\src\gl.cpp -o CMakeFiles\Game.dir\src\gl.cpp.s
+
+CMakeFiles/Game.dir/src/game.cpp.obj: CMakeFiles/Game.dir/flags.make
+CMakeFiles/Game.dir/src/game.cpp.obj: CMakeFiles/Game.dir/includes_CXX.rsp
+CMakeFiles/Game.dir/src/game.cpp.obj: ../src/game.cpp
+CMakeFiles/Game.dir/src/game.cpp.obj: CMakeFiles/Game.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Lucas\Documents\sfml-projects\cube-project\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/Game.dir/src/game.cpp.obj"
+	C:\MinGW\bin\mingw32-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Game.dir/src/game.cpp.obj -MF CMakeFiles\Game.dir\src\game.cpp.obj.d -o CMakeFiles\Game.dir\src\game.cpp.obj -c C:\Users\Lucas\Documents\sfml-projects\cube-project\src\game.cpp
+
+CMakeFiles/Game.dir/src/game.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Game.dir/src/game.cpp.i"
+	C:\MinGW\bin\mingw32-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Lucas\Documents\sfml-projects\cube-project\src\game.cpp > CMakeFiles\Game.dir\src\game.cpp.i
+
+CMakeFiles/Game.dir/src/game.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Game.dir/src/game.cpp.s"
+	C:\MinGW\bin\mingw32-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Lucas\Documents\sfml-projects\cube-project\src\game.cpp -o CMakeFiles\Game.dir\src\game.cpp.s
+
 # Object files for target Game
 Game_OBJECTS = \
 "CMakeFiles/Game.dir/src/main.cpp.obj" \
 "CMakeFiles/Game.dir/src/entities.cpp.obj" \
-"CMakeFiles/Game.dir/src/tools/utility.cpp.obj"
+"CMakeFiles/Game.dir/src/tools/utility.cpp.obj" \
+"CMakeFiles/Game.dir/src/gl.cpp.obj" \
+"CMakeFiles/Game.dir/src/game.cpp.obj"
 
 # External object files for target Game
 Game_EXTERNAL_OBJECTS =
@@ -125,6 +157,8 @@ Game_EXTERNAL_OBJECTS =
 bin/Game.exe: CMakeFiles/Game.dir/src/main.cpp.obj
 bin/Game.exe: CMakeFiles/Game.dir/src/entities.cpp.obj
 bin/Game.exe: CMakeFiles/Game.dir/src/tools/utility.cpp.obj
+bin/Game.exe: CMakeFiles/Game.dir/src/gl.cpp.obj
+bin/Game.exe: CMakeFiles/Game.dir/src/game.cpp.obj
 bin/Game.exe: CMakeFiles/Game.dir/build.make
 bin/Game.exe: C:/SFML-2.5.1/lib/libsfml-graphics-d.a
 bin/Game.exe: C:/SFML-2.5.1/lib/libsfml-audio-d.a
@@ -136,7 +170,7 @@ bin/Game.exe: C:/glew-2.1.0/lib/Release/Win32/glew32.lib
 bin/Game.exe: CMakeFiles/Game.dir/linklibs.rsp
 bin/Game.exe: CMakeFiles/Game.dir/objects1.rsp
 bin/Game.exe: CMakeFiles/Game.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\Lucas\Documents\sfml-projects\cube-project\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable bin\Game.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\Lucas\Documents\sfml-projects\cube-project\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable bin\Game.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\Game.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

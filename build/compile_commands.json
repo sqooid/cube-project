@@ -18,5 +18,15 @@
   "directory": "C:/Users/Lucas/Documents/sfml-projects/cube-project/build",
   "command": "C:\\MinGW\\bin\\mingw32-g++.exe  @CMakeFiles/Game.dir/includes_CXX.rsp -g -o CMakeFiles\\Game.dir\\src\\tools\\utility.cpp.obj -c C:\\Users\\Lucas\\Documents\\sfml-projects\\cube-project\\src\\tools\\utility.cpp",
   "file": "C:/Users/Lucas/Documents/sfml-projects/cube-project/src/tools/utility.cpp"
+},
+{
+  "directory": "C:/Users/Lucas/Documents/sfml-projects/cube-project/build",
+  "command": "C:\\MinGW\\bin\\mingw32-g++.exe  @CMakeFiles/Game.dir/includes_CXX.rsp -g -o CMakeFiles\\Game.dir\\src\\gl.cpp.obj -c C:\\Users\\Lucas\\Documents\\sfml-projects\\cube-project\\src\\gl.cpp",
+  "file": "C:/Users/Lucas/Documents/sfml-projects/cube-project/src/gl.cpp"
+},
+{
+  "directory": "C:/Users/Lucas/Documents/sfml-projects/cube-project/build",
+  "command": "C:\\MinGW\\bin\\mingw32-g++.exe  @CMakeFiles/Game.dir/includes_CXX.rsp -g -o CMakeFiles\\Game.dir\\src\\game.cpp.obj -c C:\\Users\\Lucas\\Documents\\sfml-projects\\cube-project\\src\\game.cpp",
+  "file": "C:/Users/Lucas/Documents/sfml-projects/cube-project/src/game.cpp"
 }
 ]

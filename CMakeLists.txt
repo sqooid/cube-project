@@ -34,7 +34,7 @@ set(GLOB SOURCES
 )
 
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY bin)
-add_executable(Game src/main.cpp src/entities.cpp src/tools/utility.cpp)
+add_executable(Game src/main.cpp src/entities.cpp src/tools/utility.cpp src/gl.cpp src/game.cpp)
 
 target_include_directories(Game PRIVATE src)
 

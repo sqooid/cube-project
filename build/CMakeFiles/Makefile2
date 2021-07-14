@@ -82,7 +82,7 @@ clean: CMakeFiles/Game.dir/clean
 CMakeFiles/gl-shader.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\gl-shader.dir\build.make CMakeFiles/gl-shader.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\gl-shader.dir\build.make CMakeFiles/gl-shader.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\Lucas\Documents\sfml-projects\cube-project\build\CMakeFiles --progress-num=5,6 "Built target gl-shader"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\Lucas\Documents\sfml-projects\cube-project\build\CMakeFiles --progress-num=7,8 "Built target gl-shader"
 .PHONY : CMakeFiles/gl-shader.dir/all
 
 # Build rule for subdir invocation for target.
@@ -108,12 +108,12 @@ CMakeFiles/gl-shader.dir/clean:
 CMakeFiles/Game.dir/all: CMakeFiles/gl-shader.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Game.dir\build.make CMakeFiles/Game.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Game.dir\build.make CMakeFiles/Game.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\Lucas\Documents\sfml-projects\cube-project\build\CMakeFiles --progress-num=1,2,3,4 "Built target Game"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\Lucas\Documents\sfml-projects\cube-project\build\CMakeFiles --progress-num=1,2,3,4,5,6 "Built target Game"
 .PHONY : CMakeFiles/Game.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/Game.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Lucas\Documents\sfml-projects\cube-project\build\CMakeFiles 6
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Lucas\Documents\sfml-projects\cube-project\build\CMakeFiles 8
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/Game.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Lucas\Documents\sfml-projects\cube-project\build\CMakeFiles 0
 .PHONY : CMakeFiles/Game.dir/rule

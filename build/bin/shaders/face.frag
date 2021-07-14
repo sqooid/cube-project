@@ -15,10 +15,10 @@ void main()
 	// vec3 lightSourceVector = normalize(lightSourceDirection);
 	vec3 lightSourceVector = normalize(vec3(0.0, -1.0, -1.0));
 
-	float ambientStrength = 0.3;
+	float ambientStrength = 0.1;
 	vec3 ambient = ambientStrength * vec3(1.0, 1.0, 1.0);
 
-	float diff = max(dot(normalVector, -lightSourceVector), 0.0);
+	float diff = (dot(normalVector, -lightSourceVector) + 1) / 2;
 	vec3 diffuse = diff * vec3(1.0, 1.0, 1.0);
 
 	vec3 lightResult = (ambient + diffuse) * Color;
